@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/yassine/Desktop/dotn/dotn.csproj": {}
+    "/home/yassine/Desktop/Agent Travel/dotn.csproj": {}
   },
   "projects": {
-    "/home/yassine/Desktop/dotn/dotn.csproj": {
+    "/home/yassine/Desktop/Agent Travel/dotn.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/yassine/Desktop/dotn/dotn.csproj",
+        "projectUniqueName": "/home/yassine/Desktop/Agent Travel/dotn.csproj",
         "projectName": "dotn",
-        "projectPath": "/home/yassine/Desktop/dotn/dotn.csproj",
+        "projectPath": "/home/yassine/Desktop/Agent Travel/dotn.csproj",
         "packagesPath": "/home/yassine/.nuget/packages/",
-        "outputPath": "/home/yassine/Desktop/dotn/obj/",
+        "outputPath": "/home/yassine/Desktop/Agent Travel/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/yassine/.nuget/NuGet/NuGet.Config"
