@@ -27,8 +27,8 @@ app.UseEndpoints(endpoints =>
             pattern: "{controller=Home}/{action=Index}/{id?}");
 
         endpoints.MapControllerRoute(
-            name: "myroute",
-            pattern: "myroute/{controller=Home}/{action=Index}/{id?}");
+            name: "Admin",
+            pattern: "{controller=Admin}/{action=Index}/{id?}");
     });
 
 app.Run();
