@@ -16318,6 +16318,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/yassine/Desktop/Agent Travel/Views/Admin/Index.cshtml",
+      "TargetPath": "Views\\Admin\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/yassine/Desktop/Agent Travel/Views/Admin/_ViewStart.cshtml",
       "TargetPath": "Views\\Admin\\_ViewStart.cshtml",
       "FileKind": "mvc"
