@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "htem9b+c6QF330oWWo3OYnAV26uzer2vTdEuAKgZ7A4=",
+  "Hash": "jnvZxFQT2RyksYIrszjrU7xJPMVijvjHPHr/bJk06tc=",
   "Source": "dotn",
   "BasePath": "_content/dotn",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Asus\\Desktop\\DOTNET_DEMO\\Agent-Travel\\wwwroot\\images\\1.jpg",
+      "SourceId": "dotn",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Asus\\Desktop\\DOTNET_DEMO\\Agent-Travel\\wwwroot\\",
+      "BasePath": "_content/dotn",
+      "RelativePath": "images/1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\1.jpg"
     },
     {
       "Identity": "C:\\Users\\Asus\\Desktop\\DOTNET_DEMO\\Agent-Travel\\wwwroot\\js\\site.js",
