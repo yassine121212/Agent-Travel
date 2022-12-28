@@ -21,6 +21,11 @@ public class AdminController : Controller
     {
         return View();
     }
+       public IActionResult AddOffre()
+    {
+        return View();
+    }
+
 
     
 

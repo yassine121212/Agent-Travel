@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /home/yassine/Desktop/Agent Travel
 build_property._RazorSourceGeneratorDebug = 
 
+[/home/yassine/Desktop/Agent Travel/Views/Admin/AddOffre.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vQWRkT2ZmcmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/yassine/Desktop/Agent Travel/Views/Admin/Display_Offres.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vRGlzcGxheV9PZmZyZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
