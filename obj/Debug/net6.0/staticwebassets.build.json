@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fozD3xn4AFfNpwRhyLt5j5027aq31gDcGqLfWMb3Ymk=",
+  "Hash": "asltg4XKsTDRJ88X6Ot3clg59VHjdDNBjEvJD6LNgQQ=",
   "Source": "dotn",
   "BasePath": "_content/dotn",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\1.jpg"
+    },
+    {
+      "Identity": "D:\\github\\Agent-Travel\\wwwroot\\images\\travell.png",
+      "SourceId": "dotn",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\github\\Agent-Travel\\wwwroot\\",
+      "BasePath": "_content/dotn",
+      "RelativePath": "images/travell.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\travell.png"
     },
     {
       "Identity": "D:\\github\\Agent-Travel\\wwwroot\\js\\site.js",

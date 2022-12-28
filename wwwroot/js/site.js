@@ -13,3 +13,6 @@ items.forEach((el) => {
         next = next.nextElementSibling
     }
 })
+document.addEventListener('DOMContentLoaded', e => {
+    $('#input-datalist').autocomplete()
+}, false);
