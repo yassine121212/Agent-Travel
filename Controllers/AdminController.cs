@@ -17,6 +17,10 @@ public class AdminController : Controller
     {
         return View();
     }
+     public IActionResult Display_Offres()
+    {
+        return View();
+    }
 
     
 
