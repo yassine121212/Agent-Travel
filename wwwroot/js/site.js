@@ -8,8 +8,17 @@ items.forEach((el) => {
       // wrap carousel by using first child
       next = items[0];
     }
+
     let cloneChild = next.cloneNode(true);
     el.appendChild(cloneChild.children[0]);
     next = next.nextElementSibling;
   }
 });
+
+document.addEventListener(
+  "DOMContentLoaded",
+  (e) => {
+    $("#input-datalist").autocomplete();
+  },
+  false
+);
