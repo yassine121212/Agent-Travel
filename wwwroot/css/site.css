@@ -31,6 +31,16 @@ color: #fc4333;
   background-color: #4A3060;
   /* Green */
   color: white;
+
 }
 
+.bg1{
+  background-color: #efe9f2 !important;
+  color:#381B51;
+ 
+}
+.bg1:active:focus-visible {
+  outline: none !important;
+  border: none !important;
+}
 @media (max-width: 767px){.carousel-inner .carousel-item >div{display: none}.carousel-inner .carousel-item >div:first-child{display: block}}.carousel-inner .carousel-item.active, .carousel-inner .carousel-item-next, .carousel-inner .carousel-item-prev{display: flex}@media (min-width: 768px){.carousel-inner .carousel-item-end.active, .carousel-inner .carousel-item-next{transform: translateX(25%)}.carousel-inner .carousel-item-start.active, .carousel-inner .carousel-item-prev{transform: translateX(-25%)}}.carousel-inner .carousel-item-end, .carousel-inner .carousel-item-start{transform: translateX(0)}
