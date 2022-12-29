@@ -18,7 +18,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg nav1">
       <div class="container-fluid">
-        <a class="navbar-brand mt-2 mt-lg-0"asp-controller="Client" asp-action="Index">
+        <a class="navbar-brand mt-2 mt-lg-0" asp-controller="Client" asp-action="Index">
           <img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" height="15" alt="MDB Logo"
             loading="lazy" />
         </a>
@@ -61,7 +61,8 @@
 
           </ul>
           <ul class="navbar-nav ml-auto">
-            <button class="btn my-2 my-sm-0 log" type="submit">Login/Register</button>
+            <button class="btn my-2 my-sm-0 log" type="submit"><a class="nav-link text-white" asp-controller="Client"
+                asp-action="Login">Login/Register</a></button>
           </ul>
       </div>
       </div>
