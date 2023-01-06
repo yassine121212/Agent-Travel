@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "/home/yassine/.nuget/packages/": {}
+    "C:\\Users\\HP\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/yassine/Desktop/Agent Travel/dotn.csproj",
+      "projectUniqueName": "D:\\github\\Agent-Travel\\dotn.csproj",
       "projectName": "dotn",
-      "projectPath": "/home/yassine/Desktop/Agent Travel/dotn.csproj",
-      "packagesPath": "/home/yassine/.nuget/packages/",
-      "outputPath": "/home/yassine/Desktop/Agent Travel/obj/",
+      "projectPath": "D:\\github\\Agent-Travel\\dotn.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "D:\\github\\Agent-Travel\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/yassine/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -62,7 +62,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.404/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
