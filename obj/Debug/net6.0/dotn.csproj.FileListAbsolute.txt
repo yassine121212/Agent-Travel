@@ -50,3 +50,4 @@
 /home/yassine/Desktop/Agent Travel/obj/Debug/net6.0/dotn.pdb
 /home/yassine/Desktop/Agent Travel/obj/Debug/net6.0/dotn.genruntimeconfig.cache
 /home/yassine/Desktop/Agent Travel/obj/Debug/net6.0/ref/dotn.dll
+/home/yassine/Desktop/Agent Travel/obj/Debug/net6.0/scopedcss/Views/Client/Shared/_Layout.cshtml.rz.scp.css
