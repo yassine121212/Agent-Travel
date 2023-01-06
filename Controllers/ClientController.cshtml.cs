@@ -30,6 +30,10 @@ public class ClientController : Controller
     {
         return View();
     }
+    public IActionResult Panier()
+    {
+        return View();
+    }
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
