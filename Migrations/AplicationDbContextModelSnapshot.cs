@@ -257,19 +257,19 @@ namespace dotn.Migrations
             modelBuilder.Entity("dotn.Models.OffreModel", b =>
                 {
                     b.HasOne("dotn.Models.GuidePartenairsModel", "id_Guide")
-                        .WithMany("Offres")
+                        .WithMany()
                         .HasForeignKey("IdGuide")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("dotn.Models.HotelPartenairsModel", "id_Hotel")
-                        .WithMany("Offres")
+                        .WithMany()
                         .HasForeignKey("IdHotel")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("dotn.Models.TransportPartenairsModel", "id_Transport")
-                        .WithMany("Offres")
+                        .WithMany()
                         .HasForeignKey("IdTransport")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -279,21 +279,6 @@ namespace dotn.Migrations
                     b.Navigation("id_Hotel");
 
                     b.Navigation("id_Transport");
-                });
-
-            modelBuilder.Entity("dotn.Models.GuidePartenairsModel", b =>
-                {
-                    b.Navigation("Offres");
-                });
-
-            modelBuilder.Entity("dotn.Models.HotelPartenairsModel", b =>
-                {
-                    b.Navigation("Offres");
-                });
-
-            modelBuilder.Entity("dotn.Models.TransportPartenairsModel", b =>
-                {
-                    b.Navigation("Offres");
                 });
 #pragma warning restore 612, 618
         }

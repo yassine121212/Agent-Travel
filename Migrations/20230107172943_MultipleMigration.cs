@@ -67,6 +67,28 @@ namespace dotn.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    NameUser = table.Column<string>(name: "Name_User", type: "nvarchar(35)", maxLength: 35, nullable: false),
+                    LastNameUser = table.Column<string>(name: "LastName_User", type: "nvarchar(35)", maxLength: 35, nullable: false),
+                    Adress = table.Column<string>(type: "nvarchar(45)", maxLength: 45, nullable: false),
+                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PictureUser = table.Column<string>(name: "Picture_User", type: "nvarchar(max)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    isAdmin = table.Column<bool>(name: "is_Admin", type: "bit", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Offres",
                 columns: table => new
                 {
@@ -131,6 +153,9 @@ namespace dotn.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Offres");
+
+            migrationBuilder.DropTable(
+                name: "Users");
 
             migrationBuilder.DropTable(
                 name: "GuidePartenairs");
