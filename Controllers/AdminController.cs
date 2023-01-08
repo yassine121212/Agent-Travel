@@ -21,6 +21,30 @@ public class AdminController : Controller
     {
         return View();
     }
+     public IActionResult Add_Offre()
+    {
+        return View();
+    }
+    public IActionResult Display_Users()
+    {
+        return View();
+    }
+     public IActionResult Add_User()
+    {
+        return View();
+    }
+ public IActionResult Display_Partners()
+    {
+        return View();
+    }
+     public IActionResult Add_Partner()
+    {
+        return View();
+    }
+
+
+    
+
 
     
 
