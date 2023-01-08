@@ -3544,19 +3544,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Asus\\.nuget\\packages\\": {}
+    "/home/yassine/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Asus\\Desktop\\Agent\\Agent-Travel\\dotn.csproj",
+      "projectUniqueName": "/home/yassine/Desktop/Agent-Travel/dotn.csproj",
       "projectName": "dotn",
-      "projectPath": "c:\\Users\\Asus\\Desktop\\Agent\\Agent-Travel\\dotn.csproj",
-      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Asus\\Desktop\\Agent\\Agent-Travel\\obj\\",
+      "projectPath": "/home/yassine/Desktop/Agent-Travel/dotn.csproj",
+      "packagesPath": "/home/yassine/.nuget/packages/",
+      "outputPath": "/home/yassine/Desktop/Agent-Travel/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/yassine/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -3616,7 +3616,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.404/RuntimeIdentifierGraph.json"
       }
     }
   }

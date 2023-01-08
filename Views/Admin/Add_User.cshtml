@@ -1,0 +1,116 @@
+@{
+    ViewData["Title"] = "Add Offre Page";
+}
+<div class="main-content">
+
+
+    <div class="col-xl-12" style="margin-top: 1cm;">
+        <div class="card">
+            <div class="card-header justify-content-between d-flex align-items-center">
+                <h4 class="card-title">Ajouter un Utilisateur</h4>
+            </div><!-- end card header -->
+            <div class="card-body">
+                <form class="needs-validation" novalidate>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label class="form-label" for="validationCustom01">Titre de l'offre</label>
+                                <input type="text" class="form-control" id="validationCustom01"
+                                    placeholder="Ajouter le titre" value="Mark" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+                        <div class="col-md-3">
+                            <div class="mb-3">
+                                <label class="form-label" for="validationCustom03">Pays</label>
+                                <input type="text" class="form-control" id="validationCustom03"
+                                    placeholder="Ajouter le pays" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid Ville.
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+                        <div class="col-md-3">
+                            <div class="mb-3">
+                                <label class="form-label" for="validationCustom03">Ville</label>
+                                <input type="text" class="form-control" id="validationCustom03"
+                                    placeholder="Ajouter la ville" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid Ville.
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+                        <div class="col-md-2">
+                            <div class="mb-3 position-relative">
+                                <label class="form-label" for="validationTooltipUsername">Prix</label>
+                                <div class="input-group">
+
+                                    <input type="text" class="form-control" id="validationTooltipUsername"
+                                        placeholder="Prix" aria-describedby="validationTooltipUsernamePrepend" required>
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="validationTooltipUsernamePrepend">MAD</span>
+                                    </div>
+                                    <div class="invalid-tooltip">
+                                        Please entrez un prix valide.
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+
+                    </div><!-- end row -->
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label class="form-label">Date début de l'offre</label>
+                                <input type="date" class="form-control" id="datepicker-basic">
+                            </div>
+                        </div><!-- end col -->
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label class="form-label">Date fin de l'offre</label>
+                                <input type="date" class="form-control" id="datepicker-basic">
+                            </div>
+                        </div><!-- end col -->
+                        <div class="col-md-4 " style="margin-top: -0.2cm;">
+                            <div class="card">
+                                <div class="card-header justify-content-between d-flex align-items-center">
+                                    <h4 class="card-title">Dropzone</h4>
+                                </div><!-- end card header -->
+                                <div class="card-body">
+                                    <div>
+
+                                        <div class="fallback">
+                                            <input name="file" type="file" multiple="multiple">
+                                        </div>
+                                        <div class="dz-message needsclick">
+                                            <div class="mb-3">
+                                                <i class="display-4 text-muted uil uil-cloud-upload"></i>
+                                            </div>
+
+                                            <h1>Inserer une photo</h1>
+                                        </div>
+
+                                        <!-- end form -->
+                                    </div>
+
+
+                                </div>
+                            </div><!-- end card -->
+                        </div> <!-- end col -->
+
+                        <div class="form-group col-md-7" style="margin-top: -4.1cm;">
+                            <label for="exampleFormControlTextarea1">Description</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                    </div><!-- end row -->
+
+
+                    <button class="btn btn-primary" type="submit">Submit form</button>
+                </form><!-- end form -->
+            </div><!-- end card body -->
+        </div><!-- end card -->
+    </div> <!-- end col -->
+
+</div>

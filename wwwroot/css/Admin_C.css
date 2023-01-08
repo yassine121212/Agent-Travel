@@ -1,0 +1,27 @@
+.trash1_class:hover {
+  color: blueviolet !important;
+  background-color: beige;
+}
+.trash1_class {
+  padding: 0.3cm;
+  border-radius: 100%;
+}
+.close1_class:hover {
+  color:rgb(255, 28, 28) important;
+  background-color: beige;
+}
+.close1_class{
+  padding: 0.3cm;
+  border-radius: 100%;
+}
+.eye_class:hover {
+  color:rgba(101, 0, 196, 0.74) important;
+  background-color: rgb(218, 226, 228);
+}
+.eye_class{
+  padding: 0.3cm;
+  border-radius: 100%;
+  cursor: pointer;
+  color: #13005f;
+}
+
