@@ -1,174 +1,129 @@
 @{
-  ViewData["Title"] = "Display Offres Page";
+    ViewData["Title"] = "Display Offres Page";
 }
 
 <div class="row">
-  <div class="col-lg-12">
-    <div class="card">
-      <div class="card-header justify-content-between d-flex align-items-center">
-        <h4 class="card-title">Offres</h4>
-      </div><!-- end card header -->
-      <div class="card-body">
-        <table class="table align-middle mb-0 bg-white">
-          <thead class="bg-light">
-            <tr>
-              <th>Title</th>
-              <th>Date of begin</th>
-              <th>Date of end</th>
-              <th>Price</th>
-              <th>Partenaires</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <div class="d-flex align-items-center">
-                  <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px"
-                    class="rounded-circle" />
-                  <div class="ms-3">
-                    <p class="fw-bold mb-1">John Doe</p>
-                    <p class="text-muted mb-0">john.doe@gmail.com</p>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <p class="fw-normal mb-1">Software engineer</p>
-                <p class="text-muted mb-0">IT department</p>
-              </td>
-              <td>
-                <span class="badge badge-success rounded-pill d-inline">Active</span>
-              </td>
-              <td>Senior</td>
-              <td>
-                <button type="button" class="btn btn-link btn-sm btn-rounded">
-                  Edit
-                </button>
-              </td>
-              <td class="d-flex justify-content-evenly align-items-center " style="height:2cm ;">
-                <i class="fa-solid fa-gear  trash1_class" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                  style="cursor: pointer; color:#3A1B53"></i>
-                <i class="fa-solid fa-trash close1_class" style="cursor: pointer; color:red"></i>
-              </td>
-            </tr>
-
-          </tbody>
-        </table>
-      </div>
-      <!-- end card body -->
-    </div>
-    <!-- end card -->
-  </div>
-  <!-- end col -->
-</div>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Parametres de l'offre</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form class="needs-validation" novalidate>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="mb-3">
-                <label class="form-label" for="validationCustom01">Titre de l'offre</label>
-                <input type="text" class="form-control" id="validationCustom01" placeholder="Ajouter le titre"
-                  value="Mark" required>
-                <div class="valid-feedback">
-                  Looks good!
-                </div>
-              </div>
-            </div><!-- end col -->
-            <div class="col-md-6">
-              <div class="mb-3">
-                <label class="form-label" for="validationCustom03">Pays</label>
-                <input type="text" class="form-control" id="validationCustom03" placeholder="Ajouter le pays" required>
-                <div class="invalid-feedback">
-                  Please provide a valid Ville.
-                </div>
-              </div>
-            </div><!-- end col -->
-            <div class="col-md-6">
-              <div class="mb-3">
-                <label class="form-label" for="validationCustom03">Ville</label>
-                <input type="text" class="form-control" id="validationCustom03" placeholder="Ajouter la ville" required>
-                <div class="invalid-feedback">
-                  Please provide a valid Ville.
-                </div>
-              </div>
-            </div><!-- end col -->
-            <div class="col-md-6">
-              <div class="mb-3 position-relative">
-                <label class="form-label" for="validationTooltipUsername">Prix</label>
-                <div class="input-group">
-
-                  <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Prix"
-                    aria-describedby="validationTooltipUsernamePrepend" required>
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="validationTooltipUsernamePrepend">MAD</span>
-                  </div>
-                  <div class="invalid-tooltip">
-                    Please entrez un prix valide.
-                  </div>
-                </div>
-              </div>
-            </div><!-- end col -->
-
-          </div><!-- end row -->
-          <div class="row">
-            <div class="col-md-6">
-              <div class="mb-3">
-                <label class="form-label">Date début de l'offre</label>
-                <input type="date" class="form-control" id="datepicker-basic">
-              </div>
-            </div><!-- end col -->
-            <div class="col-md-6">
-              <div class="mb-3">
-                <label class="form-label">Date fin de l'offre</label>
-                <input type="date" class="form-control" id="datepicker-basic">
-              </div>
-            </div><!-- end col -->
-
-
-            <div class="form-group col-md-12">
-              <label for="exampleFormControlTextarea1">Description</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-            <div class="col-md-6 ">
-              <div class="card">
-                <div class="card-header justify-content-between d-flex align-items-center">
-                  <h4 class="card-title">Dropzone</h4>
-                </div><!-- end card header -->
-                <div class="card-body">
-                  <div>
-
-                    <div class="fallback">
-                      <input name="file" type="file" multiple="multiple">
-                    </div>
-                    <div class="dz-message needsclick">
-                      <div class="mb-3">
-                        <i class="display-4 text-muted uil uil-cloud-upload"></i>
-                      </div>
-
-                      <h6>Inserer une photo</h6>
-                    </div>
-
-                    <!-- end form -->
-                  </div>
-
-
-                </div>
-              </div><!-- end card -->
-            </div> <!-- end col -->
-          </div><!-- end row -->
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-        <button type="button" class="btn btn-primary">Enregistrer les modifications</button>
-      </div>
-    </div>
-  </div>
-</div>
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-header justify-content-between d-flex align-items-center">
+                                        <h4 class="card-title">Offres</h4>
+                                    </div><!-- end card header -->
+                                    <div class="card-body">
+                                       <table class="table align-middle mb-0 bg-white">
+  <thead class="bg-light">
+    <tr>
+      <th>Title</th>
+      <th>Date of begin</th>
+      <th>Date of end</th>
+      <th>Price</th>
+      <th>Partenaires</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <div class="d-flex align-items-center">
+          <img
+              src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+              alt=""
+              style="width: 45px; height: 45px"
+              class="rounded-circle"
+              />
+          <div class="ms-3">
+            <p class="fw-bold mb-1">John Doe</p>
+            <p class="text-muted mb-0">john.doe@gmail.com</p>
+          </div>
+        </div>
+      </td>
+      <td>
+        <p class="fw-normal mb-1">Software engineer</p>
+        <p class="text-muted mb-0">IT department</p>
+      </td>
+      <td>
+        <span class="badge badge-success rounded-pill d-inline">Active</span>
+      </td>
+      <td>Senior</td>
+      <td>
+        <button type="button" class="btn btn-link btn-sm btn-rounded">
+          Edit
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="d-flex align-items-center">
+          <img
+              src="https://mdbootstrap.com/img/new/avatars/6.jpg"
+              class="rounded-circle"
+              alt=""
+              style="width: 45px; height: 45px"
+              />
+          <div class="ms-3">
+            <p class="fw-bold mb-1">Alex Ray</p>
+            <p class="text-muted mb-0">alex.ray@gmail.com</p>
+          </div>
+        </div>
+      </td>
+      <td>
+        <p class="fw-normal mb-1">Consultant</p>
+        <p class="text-muted mb-0">Finance</p>
+      </td>
+      <td>
+        <span class="badge badge-primary rounded-pill d-inline"
+              >Onboarding</span
+          >
+      </td>
+      <td>Junior</td>
+      <td>
+        <button
+                type="button"
+                class="btn btn-link btn-rounded btn-sm fw-bold"
+                data-mdb-ripple-color="dark"
+                >
+          Edit
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="d-flex align-items-center">
+          <img
+              src="https://mdbootstrap.com/img/new/avatars/7.jpg"
+              class="rounded-circle"
+              alt=""
+              style="width: 45px; height: 45px"
+              />
+          <div class="ms-3">
+            <p class="fw-bold mb-1">Kate Hunington</p>
+            <p class="text-muted mb-0">kate.hunington@gmail.com</p>
+          </div>
+        </div>
+      </td>
+      <td>
+        <p class="fw-normal mb-1">Designer</p>
+        <p class="text-muted mb-0">UI/UX</p>
+      </td>
+      <td>
+        <span class="badge badge-warning rounded-pill d-inline">Awaiting</span>
+      </td>
+      <td>Senior</td>
+      <td>
+        <button
+                type="button"
+                class="btn btn-link btn-rounded btn-sm fw-bold"
+                data-mdb-ripple-color="dark"
+                >
+          Edit
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+                                    </div>
+                                    <!-- end card body -->
+                                </div>
+                                <!-- end card -->
+                            </div>
+                            <!-- end col -->
+                        </div>

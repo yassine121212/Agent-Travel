@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/yassine/Desktop/Agent-Travel/dotn.csproj": {}
+    "C:\\Users\\Asus\\Desktop\\Agent\\Agent-Travel\\dotn.csproj": {}
   },
   "projects": {
-    "/home/yassine/Desktop/Agent-Travel/dotn.csproj": {
+    "C:\\Users\\Asus\\Desktop\\Agent\\Agent-Travel\\dotn.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/yassine/Desktop/Agent-Travel/dotn.csproj",
+        "projectUniqueName": "C:\\Users\\Asus\\Desktop\\Agent\\Agent-Travel\\dotn.csproj",
         "projectName": "dotn",
-        "projectPath": "/home/yassine/Desktop/Agent-Travel/dotn.csproj",
-        "packagesPath": "/home/yassine/.nuget/packages/",
-        "outputPath": "/home/yassine/Desktop/Agent-Travel/obj/",
+        "projectPath": "C:\\Users\\Asus\\Desktop\\Agent\\Agent-Travel\\dotn.csproj",
+        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Asus\\Desktop\\Agent\\Agent-Travel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/yassine/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -38,6 +38,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Session": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.1, )"
@@ -74,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.404/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }
