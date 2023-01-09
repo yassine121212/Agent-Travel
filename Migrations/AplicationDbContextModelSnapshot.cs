@@ -22,6 +22,28 @@ namespace dotn.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("dotn.Models.CommandeModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double>("Total_Price")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Commandes");
+                });
+
             modelBuilder.Entity("dotn.Models.GuidePartenairsModel", b =>
                 {
                     b.Property<int>("IdGuide")
@@ -240,18 +262,39 @@ namespace dotn.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Picture_User")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("is_Admin")
+                    b.Property<bool?>("is_Actived")
+                        .HasColumnType("bit");
+
+                    b.Property<bool?>("is_Admin")
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("dotn.Models.CommandeModel", b =>
+                {
+                    b.HasOne("dotn.Models.OffreModel", "id_offre")
+                        .WithMany()
+                        .HasForeignKey("Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("dotn.Models.UserModel", "id_user")
+                        .WithMany()
+                        .HasForeignKey("Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("id_offre");
+
+                    b.Navigation("id_user");
                 });
 
             modelBuilder.Entity("dotn.Models.OffreModel", b =>

@@ -77,9 +77,10 @@ namespace dotn.Migrations
                     Adress = table.Column<string>(type: "nvarchar(45)", maxLength: 45, nullable: false),
                     Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PictureUser = table.Column<string>(name: "Picture_User", type: "nvarchar(max)", nullable: false),
+                    PictureUser = table.Column<string>(name: "Picture_User", type: "nvarchar(max)", nullable: true),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    isAdmin = table.Column<bool>(name: "is_Admin", type: "bit", nullable: false),
+                    isAdmin = table.Column<bool>(name: "is_Admin", type: "bit", nullable: true),
+                    isActived = table.Column<bool>(name: "is_Actived", type: "bit", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -132,6 +133,33 @@ namespace dotn.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Commandes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    TotalPrice = table.Column<double>(name: "Total_Price", type: "float", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Commandes", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Commandes_Offres_Id",
+                        column: x => x.Id,
+                        principalTable: "Offres",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Commandes_Users_Id",
+                        column: x => x.Id,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Offres_IdGuide",
                 table: "Offres",
@@ -151,6 +179,9 @@ namespace dotn.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Commandes");
+
             migrationBuilder.DropTable(
                 name: "Offres");
 

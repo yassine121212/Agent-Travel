@@ -12,4 +12,5 @@ public class AplicationDbContext : DbContext
     public DbSet<GuidePartenairsModel> GuidePartenairs { get; set; }
     public DbSet<TransportPartenairsModel> TransportPartenairs { get; set; }
     public DbSet<HotelPartenairsModel> HotelPartenairs { get; set; }
+    public DbSet<CommandeModel> Commandes { get; set; }
 }

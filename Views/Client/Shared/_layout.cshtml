@@ -64,10 +64,38 @@
           </button>
 
           </ul>
-          <ul class="navbar-nav ml-auto">
-            <button class="btn my-2 my-sm-0 log" type="submit"><a class="nav-link text-white" asp-controller="Client"
+          @if (Context.Session.GetInt32("id") != null)
+          {
+            <div>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbar-list-4">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                    <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg"
+                    width="30" height="30" class="rounded-circle">
+                  </a>
+                  <ul class="dropdown-menu">
+                    <a class="dropdown-item" asp-controller="Client" asp-action="Profile"> Settings</a>
+                    <a href="@Url.Action("Logout","Client")" class="dropdown-item">Logout</a>
+                  </ul>
+              </div>
+            </div>
+
+
+            @* <p>Email: @Context.Session.GetString("Email").ToString()</p> *@
+
+          }
+          else
+          {
+            <ul class="navbar-nav ml-auto">
+              <button class="btn my-2 my-sm-0 log" type="submit"><a class="nav-link text-white" asp-controller="Client"
                 asp-action="Login">Login/Register</a></button>
-          </ul>
+            </ul>
+          }
       </div>
       </div>
     </nav>
