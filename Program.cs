@@ -43,6 +43,7 @@ app.UseEndpoints(endpoints =>
         endpoints.MapControllerRoute(
             name: "Admin",
             pattern: "{controller=Admin}/{action=Index}/{id?}");
+           
     });
 
 app.Run();
