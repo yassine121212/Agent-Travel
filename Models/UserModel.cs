@@ -22,14 +22,16 @@ public class UserModel
     [EmailAddress]
     public string Email { get; set; }
     [DataType(DataType.ImageUrl)]
-    public string Picture_User { get; set; }
+    public string? Picture_User { get; set; }
     [Required]
     [DataType(DataType.Password)]
 
     public string Password { get; set; }
 
     [DefaultValue(false)]
-    public bool is_Admin { get; set; }
+    public bool? is_Admin { get; set; }
+    [DefaultValue(false)]
+    public bool? is_Actived { get; set; }
 
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
