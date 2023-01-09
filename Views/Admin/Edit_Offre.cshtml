@@ -1,5 +1,6 @@
+@model OffreModel
 @{
-    ViewData["Title"] = "Add Offre Page";
+    ViewData["Title"] = "Edit Offre Page";
 }
 <div class="main-content">
 
@@ -10,13 +11,13 @@
                 <h4 class="card-title">Ajouter un Offre</h4>
             </div><!-- end card header -->
             <div class="card-body">
-                <form class="needs-validation" method="post" novalidate>
+                <form class="needs-validation" method="post" asp-action="Edit_Offre" novalidate>
                     <div class="row">
                         <div class="col-md-4">
                             <div class="mb-3">
                                 <label class="form-label" for="validationCustom01">Titre de l'offre</label>
-                                <input type="text" class="form-control" id="validationCustom01" name="Title_Offre"
-                                    placeholder="Ajouter le titre" value="" required>
+                                <input asp-for="Title_Offre" class="form-control" />
+
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -25,8 +26,8 @@
                         <div class="col-md-3">
                             <div class="mb-3">
                                 <label class="form-label" for="validationCustom03">Pays</label>
-                                <input type="text" class="form-control" name="Pays" id="validationCustom03"
-                                    placeholder="Ajouter le pays" required>
+                                <input asp-for="Pays" class="form-control" />
+
                                 <div class="invalid-feedback">
                                     Please provide a valid Ville.
                                 </div>
@@ -35,8 +36,8 @@
                         <div class="col-md-3">
                             <div class="mb-3">
                                 <label class="form-label" for="validationCustom03">Ville</label>
-                                <input type="text" class="form-control" name="City" id="validationCustom03"
-                                    placeholder="Ajouter la ville" required>
+                                <input asp-for="City" class="form-control" />
+
                                 <div class="invalid-feedback">
                                     Please provide a valid Ville.
                                 </div>
@@ -47,9 +48,8 @@
                                 <label class="form-label" for="validationTooltipUsername">Prix</label>
                                 <div class="input-group">
 
-                                    <input type="text" class="form-control" name="Price_Offre"
-                                        id="validationTooltipUsername" placeholder="Prix"
-                                        aria-describedby="validationTooltipUsernamePrepend" required>
+                                    <input asp-for="Price_Offre" class="form-control" />
+
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="validationTooltipUsernamePrepend">MAD</span>
                                     </div>
@@ -65,13 +65,13 @@
                         <div class="col-md-4">
                             <div class="mb-3">
                                 <label class="form-label">Date début de l'offre</label>
-                                <input type="date" class="form-control" id="datepicker-basic">
+                                <input asp-for="Date_Begin" type="date" class="form-control" />
                             </div>
                         </div><!-- end col -->
                         <div class="col-md-4">
                             <div class="mb-3">
                                 <label class="form-label">Date fin de l'offre</label>
-                                <input type="date" class="form-control" id="datepicker-basic">
+                                <input asp-for="Date_End" type="date" class="form-control" />
                             </div>
                         </div><!-- end col -->
                         <div class="col-md-4 " style="margin-top: -0.2cm;">
@@ -83,8 +83,7 @@
                                     <div>
 
                                         <div clasDescription_Offres="fallback">
-                                            <input name="Picture_Offre" value="pic.png" type="file" multiple="multiple"
-                                                required>
+                                            <input asp-for="Picture_Offre" type="file" class="form-control" />
                                         </div>
                                         <div class="dz-message needsclick">
                                             <div class="mb-3">
@@ -104,8 +103,8 @@
 
                         <div class="form-group col-md-7" style="margin-top: -4.1cm;">
                             <label for="exampleFormControlTextarea1">Description</label>
-                            <textarea class="form-control" name="Description_Offre" id="exampleFormControlTextarea1"
-                                rows="3"></textarea>
+                            <textarea asp-for="Description_Offre" type="date" class="form-control"
+                                id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
                     </div><!-- end row -->
 

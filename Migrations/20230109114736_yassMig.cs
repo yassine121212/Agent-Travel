@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace dotn.Migrations
 {
     /// <inheritdoc />
-    public partial class MultipleMigration : Migration
+    public partial class yassMig : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -98,14 +98,14 @@ namespace dotn.Migrations
                     PriceOffre = table.Column<double>(name: "Price_Offre", type: "float", nullable: false),
                     DescriptionOffre = table.Column<string>(name: "Description_Offre", type: "nvarchar(max)", nullable: false),
                     PictureOffre = table.Column<string>(name: "Picture_Offre", type: "nvarchar(max)", nullable: false),
-                    Review = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Review = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     City = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Pays = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DateEnd = table.Column<DateTime>(name: "Date_End", type: "datetime2", nullable: false),
                     DateBegin = table.Column<DateTime>(name: "Date_Begin", type: "datetime2", nullable: false),
-                    IdHotel = table.Column<int>(type: "int", nullable: false),
-                    IdTransport = table.Column<int>(type: "int", nullable: false),
-                    IdGuide = table.Column<int>(type: "int", nullable: false),
+                    IdHotel = table.Column<int>(type: "int", nullable: true),
+                    IdTransport = table.Column<int>(type: "int", nullable: true),
+                    IdGuide = table.Column<int>(type: "int", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -116,20 +116,17 @@ namespace dotn.Migrations
                         name: "FK_Offres_GuidePartenairs_IdGuide",
                         column: x => x.IdGuide,
                         principalTable: "GuidePartenairs",
-                        principalColumn: "IdGuide",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "IdGuide");
                     table.ForeignKey(
                         name: "FK_Offres_HotelPartenairs_IdHotel",
                         column: x => x.IdHotel,
                         principalTable: "HotelPartenairs",
-                        principalColumn: "IdHotel",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "IdHotel");
                     table.ForeignKey(
                         name: "FK_Offres_TransportPartenairs_IdTransport",
                         column: x => x.IdTransport,
                         principalTable: "TransportPartenairs",
-                        principalColumn: "IdTransport",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "IdTransport");
                 });
 
             migrationBuilder.CreateIndex(

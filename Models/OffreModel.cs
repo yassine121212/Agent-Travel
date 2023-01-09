@@ -20,9 +20,8 @@ public class OffreModel
     [Required]
     [DataType(DataType.ImageUrl)]
     public string Picture_Offre { get; set; }
-    [Required]
     [DataType(DataType.Text)]
-    public string Review { get; set; }
+    public string? Review { get; set; }
     [Required]
     [DataType(DataType.Text)]
     public string City { get; set; }
@@ -35,15 +34,12 @@ public class OffreModel
     [Required]
     [DataType(DataType.Date)]
     public DateTime Date_Begin { get; set; }
-    [Required]
     [ForeignKey("IdHotel")]
-    public HotelPartenairsModel id_Hotel { get; set; }
-    [Required]
+    public HotelPartenairsModel? id_Hotel { get; set; }
     [ForeignKey("IdTransport")]
-    public TransportPartenairsModel id_Transport { get; set; }
-    [Required]
+    public TransportPartenairsModel? id_Transport { get; set; }
     [ForeignKey("IdGuide")]
-    public GuidePartenairsModel id_Guide { get; set; }
+    public GuidePartenairsModel? id_Guide { get; set; }
 
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
