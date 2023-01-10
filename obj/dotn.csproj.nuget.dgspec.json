@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/yassine/Desktop/Agent-Travel/dotn.csproj": {}
+    "D:\\github\\Agent-Travel\\dotn.csproj": {}
   },
   "projects": {
-    "/home/yassine/Desktop/Agent-Travel/dotn.csproj": {
+    "D:\\github\\Agent-Travel\\dotn.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/yassine/Desktop/Agent-Travel/dotn.csproj",
+        "projectUniqueName": "D:\\github\\Agent-Travel\\dotn.csproj",
         "projectName": "dotn",
-        "projectPath": "/home/yassine/Desktop/Agent-Travel/dotn.csproj",
-        "packagesPath": "/home/yassine/.nuget/packages/",
-        "outputPath": "/home/yassine/Desktop/Agent-Travel/obj/",
+        "projectPath": "D:\\github\\Agent-Travel\\dotn.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "D:\\github\\Agent-Travel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/yassine/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -54,9 +54,29 @@
               "target": "Package",
               "version": "[7.0.1, )"
             },
+            "PagedList": {
+              "target": "Package",
+              "version": "[1.17.0, )"
+            },
+            "PagedList.Mvc": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
             "System.Diagnostics.Tools": {
               "target": "Package",
               "version": "[4.3.0, )"
+            },
+            "X.PagedList": {
+              "target": "Package",
+              "version": "[8.4.3, )"
+            },
+            "X.PagedList.Mvc.Core": {
+              "target": "Package",
+              "version": "[8.4.3, )"
+            },
+            "X.PagedList.Web.Common": {
+              "target": "Package",
+              "version": "[8.0.7, )"
             }
           },
           "imports": [
@@ -78,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.404/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

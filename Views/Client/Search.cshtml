@@ -1,53 +1,57 @@
+@model X.PagedList.IPagedList<dotn.Models.OffreModel>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common;
+
+
 <div>
     <div class="container mt-5">
         <div class="row  ">
             <div class="col-4">
-                <div class="container border p-3" style="background-color:#efe9f2;
-;">
-                    <form>
+                <div class="container border p-3" style="background-color:#efe9f2">
+                 @using (Html.BeginForm("Search", "Client", FormMethod.Get)){
                         <p class=" h5"><b>Search</b></p>
                         <div class="form-group">
                             <label for="exampleInputEmail1"><i>Depart</i></label>
-                            <input type="date" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
+                            <input type="date" class="form-control" name="Depart"
+                               >
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1"><i>Destignation</i></label>
-                            <input type="date" class="form-control" id="exampleInputPassword1">
+                            <input type="date" class="form-control" name="Dest">
                         </div>
                         <div class="form-group">
                             <label><i>Option</i></label>
 
                             <div class="row">
                                 <div class="col">
-                                    <label for="colFormLabel">Min price per night</label>
+                                    <label for="colFormLabel">Min price </label>
                                 </div>
                                 <div class="col">
-                                    <input type="text" class="form-control" id="colFormLabel">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <label for="colFormLabel">Min price per night</label>
-                                </div>
-                                <div class="col">
-                                    <input type="text" class="form-control" id="colFormLabel">
+                                    <input type="text" class="form-control" name="Minprice">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <label for="colFormLabel">Min price per night</label>
+                                    <label for="colFormLabel">Max price</label>
                                 </div>
                                 <div class="col">
-                                    <input type="text" class="form-control" id="colFormLabel">
+                                    <input type="text" class="form-control" name="Maxprice">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <label for="colFormLabel">Min price per night</label>
+                                    <label for="colFormLabel">Hotel rating</label>
                                 </div>
                                 <div class="col">
-                                    <input type="text" class="form-control" id="colFormLabel">
+                                    <input type="text" class="form-control" name="Hotel">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <label for="colFormLabel">Transport class</label>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" id="Transport">
                                 </div>
                             </div>
                             <div class="d-flex justify-content-center align-items-center">
@@ -55,48 +59,49 @@
                                     style="background-color:#381b51;">Search</button>
                             </div>
 
-                    </form>
                 </div>
+                   }
             </div>
-
 
         </div>
         <div class="col-8 ">
             <div class="d-flex align-items-center flex-column">
                 <h4><b>Liste</b></h4>
-                <p class="font-weight-light text-muted">765 Offre trouvé</p>
+                <p class="font-weight-light text-muted">@Model.TotalItemCount</p>
             </div>
             <div class="container mt-0
              mb-5">
                 <div class="d-flex justify-content-center row">
                     <div class="col">
-                        <div class="row p-2 bg-white border rounded">
+                        @foreach (var item in Model)
+                        { 
+                           <div class="row p-2 bg-white border rounded">
                             <div class="col-md-3 mt-1 mb-1"><img
                                     class="img-fluid img-responsive rounded product-image h-100"
-                                    src="https://i.imgur.com/QpjAiHq.jpg"></div>
+                                    src="@item.Picture_Offre"></div>
                             <div class="col-md-6 mt-1">
-                                <h5>Quant olap shirts</h5>
+                                <h5>@item.Title_Offre</h5>
+                                 <div class="mt-1 mb-1 spec-1"><span >&nbsp;<i class="fas fa-hotel"></i></span><span
+                                        class="dot"></span><span>&nbsp;@item.id_Hotel.Name_Hotel   </span><span >&nbsp;<i class="fas fa-fighter-jet"></i>&nbsp;@item.id_Transport.Name_Transport</span></div>
                                 <div class="d-flex flex-row">
-                                    <div class="ratings mr-2" style="color:red;"><i class="fa fa-star"></i><i
-                                            class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-                                    </div><span>310</span>
+                                    
+                                    <div class="ratings mr-2" style="color:red;">
+                                        @for (int i = 0; i < item.id_Hotel.Rating; i++)
+                                        {
+                                            <i class="fa fa-star"></i>
+                                        }
+                                        
+                                    </div>
                                 </div>
-                                <div class="mt-1 mb-1 spec-1"><span>100% cotton</span><span
-                                        class="dot"></span><span>Light weight</span><span class="dot"></span><span>Best
-                                        finish<br></span></div>
-                                <div class="mt-1 mb-1 spec-1"><span>Unique design</span><span
-                                        class="dot"></span><span>For men</span><span
-                                        class="dot"></span><span>Casual<br></span></div>
-                                <p class="text-justify text-truncate para mb-0">There are many variations of passages of
-                                    Lorem Ipsum available, but the majority have suffered alteration in some form, by
-                                    injected humour, or randomised words which don't look even slightly
-                                    believable.
+                               
+                                
+                                <p class="text-justify text-truncate para mb-0">@item.Description_Offre
                                 <div class="text-end"><a href="">Voir Plus</a></div>
                                 </p>
                             </div>
                             <div class="align-items-center align-content-center col-md-3  border-start mt-1">
                                 <div class="d-flex flex-row align-items-center">
-                                    <h4 class="mr-1">$13.99</h4>
+                                    <h4 class="mr-1">@item.Price_Offre MAD </h4>
                                 </div>
                                 <h6 class="shop">Excursions Gratuites</h6>
                                 <p style="color:#439eb3"><i
@@ -106,127 +111,16 @@
                                 <div class="d-flex flex-column mty-0"><button class="btn-sm butt " type="button">Ajouter
                                         au panier</button></div>
                             </div>
-                        </div>
-                        <div class="row p-2 bg-white border rounded mt-2">
-                            <div class="col-md-3 mt-1 mb-1"><img
-                                    class="img-fluid img-responsive rounded product-image h-100"
-                                    src="https://i.imgur.com/JvPeqEF.jpg"></div>
-                            <div class="col-md-6 mt-1">
-                                <h5>Quant trident shirts</h5>
-                                <div class="d-flex flex-row">
-                                    <div class="ratings mr-2" style="color:red;"><i class="fa fa-star"></i><i
-                                            class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-                                    </div><span>310</span>
-                                </div>
-                                <div class="mt-1 mb-1 spec-1"><span>100% cotton</span><span
-                                        class="dot"></span><span>Light weight</span><span class="dot"></span><span>Best
-                                        finish<br></span></div>
-                                <div class="mt-1 mb-1 spec-1"><span>Unique design</span><span
-                                        class="dot"></span><span>For men</span><span
-                                        class="dot"></span><span>Casual<br></span></div>
-                                <p class="text-justify text-truncate para mb-0">There are many variations of passages of
-                                    Lorem Ipsum available, but the majority have suffered alteration in some form, by
-                                    injected humour, or randomised words which don't look even slightly
-                                    believable.
-                                <div class="text-end "><a href="">Voir Plus</a></div>
-                                </p>
-                            </div>
-                            <div class="align-items-center align-content-center col-md-3  border-start mt-1">
-                                <div class="d-flex flex-row align-items-center">
-                                    <h4 class="mr-1">$14.99</h4>
-                                </div>
-                                <h6 class="shop">Excursions Gratuites</h6>
-                                <p style="color:#439eb3"><i
-                                        class="fa-sharp fa-solid fa-bag-shopping"></i>&nbsp;Croisière sur le Bosphore
-                                    <br /> <i class="fa-solid fa-ship"></i>&nbsp;Virée Shopping
-                                </p>
-                                <div class="d-flex flex-column mty-0"><button class="btn  btn-sm  butt "
-                                        type="button">Ajouter
-                                        au panier</button></div>
-                            </div>
-                        </div>
-                        <div class="row p-2 bg-white border rounded mt-2">
-                            <div class="col-md-3 mt-1 mb-1"><img
-                                    class="img-fluid img-responsive rounded product-image h-100"
-                                    src="https://i.imgur.com/Bf4dIaN.jpg"></div>
-                            <div class="col-md-6 mt-1">
-                                <h5>Quant ruybi shirts</h5>
-                                <div class="d-flex flex-row">
-                                    <div class="ratings mr-2" style="color:red;"><i class="fa fa-star"></i><i
-                                            class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-                                    </div><span>123</span>
-                                </div>
-                                <div class="mt-1 mb-1 spec-1"><span>100% cotton</span><span
-                                        class="dot"></span><span>Light weight</span><span class="dot"></span><span>Best
-                                        finish<br></span></div>
-                                <div class="mt-1 mb-1 spec-1"><span>Unique design</span><span
-                                        class="dot"></span><span>For men</span><span
-                                        class="dot"></span><span>Casual<br></span></div>
-                                <p class="text-justify text-truncate para mb-0 mh-3">There are many variations of
-                                    passages of
-                                    Lorem Ipsum available, but the majority have suffered alteration in some form, by
-                                    injected humour, or randomised words which don't look even
-                                    slightlybelievable.
-                                <div class="text-end "><a href="">Voir Plus</a></div>
-                                </p>
-
-                            </div>
-                            <div class="align-items-center align-content-center col-md-3  border-start mt-1 ">
-                                <div class="d-flex flex-row align-items-center">
-                                    <h4 class="mr-1">$13.99</h4>
-                                </div>
-                                <h6 class="shop">Excursions Gratuites</h6>
-                                <p style="color:#439eb3"><i
-                                        class="fa-sharp fa-solid fa-bag-shopping"></i>&nbsp;Croisière sur le Bosphore
-                                    <br /> <i class="fa-solid fa-ship"></i>&nbsp;Virée Shopping
-                                </p>
-                                <div class="d-flex flex-column mty-0"><button class="btn  btn-sm  butt "
-                                        type="button">Ajouter
-                                        au panier</button></div>
-                            </div>
-                        </div>
-                        <div class="row p-2 bg-white border rounded mt-2">
-                            <div class="col-md-3 mt-1 mb-1"><img
-                                    class="img-fluid img-responsive rounded product-image h-100"
-                                    src="https://i.imgur.com/HO8e9b8.jpg"></div>
-                            <div class="col-md-6 mt-1">
-                                <h5>Quant tinor shirts</h5>
-                                <div class="d-flex flex-row">
-                                    <div class="ratings mr-2" style="color:red;"><i class="fa fa-star"></i><i
-                                            class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-                                    </div><span>110</span>
-                                </div>
-                                <div class="mt-1 mb-1 spec-1"><span>100% cotton</span><span
-                                        class="dot"></span><span>Light weight</span><span class="dot"></span><span>Best
-                                        finish<br></span></div>
-                                <div class="mt-1 mb-1 spec-1"><span>Unique design</span><span
-                                        class="dot"></span><span>For men</span><span
-                                        class="dot"></span><span>Casual<br></span></div>
-                                <p class="text-justify text-truncate para mb-0">There are many variations of passages of
-                                    Lorem Ipsum available, but the majority have suffered alteration in some form, by
-                                    injected humour, or randomised words which don't look even slightly
-                                    believable.
-                                <div class="text-end "><a href="">Voir Plus</a></div>
-                                </p>
-                            </div>
-                            <div class="align-items-center align-content-center col-md-3 border-start mt-1">
-                                <div class="d-flex flex-row align-items-center">
-                                    <h4 class="mr-1">$15.99</h4>
-                                </div>
-                                <h6 class="shop">Excursions Gratuites</h6>
-                                <p style="color:#439eb3"><i
-                                        class="fa-sharp fa-solid fa-bag-shopping"></i>&nbsp;Croisière sur le Bosphore
-                                    <br /> <i class="fa-solid fa-ship"></i>&nbsp;Virée Shopping
-                                </p>
-                                <div class="d-flex flex-column mty-0"><button class="btn  btn-sm butt "
-                                        type="button">Ajouter
-                                        au panier</button></div>
-                            </div>
-                        </div>
+                        </div> 
+                        }
+                        
+                       
+                       
+                       
                     </div>
                 </div>
             </div>
-            <div class="d-flex justify-content-center align-items-center mt-2">
+            @* <div class="d-flex justify-content-center align-items-center mt-2">
                 <nav aria-label="Page navigation example">
                     <ul class="pagination">
                         <li class="page-item">
@@ -246,7 +140,17 @@
                         </li>
                     </ul>
                 </nav>
-            </div>
+            </div> *@
+             <div class="pagination" style="display:inline-block; vertical-align:middle;">
+       @Html.PagedListPager(Model, page => Url.Action("Search", new { page, pageSize = Model.PageSize }),
+        new PagedListRenderOptions {
+        LiElementClasses = new string[] { "page-item" },
+        PageClasses = new string[] { "page-link" }
+})
+       
+        Showing @Model.FirstItemOnPage to @Model.LastItemOnPage of @Model.TotalItemCount Products
+     
+ </div>
         </div>
 
     </div>
