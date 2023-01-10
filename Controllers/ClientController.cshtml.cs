@@ -25,26 +25,30 @@ public class ClientController : Controller
     {
         return View();
     }
+    
     public ActionResult Profile()
     {
-
+        
         return View();
 
-
     }
+    
     [HttpGet]
-    public ActionResult Search(int Minprice, int Maxprice, string Dest, string Depart, int Hotel, int page = 1, int pageSize = 2)
+    public ActionResult Search(int Minprice, string villedest,int Maxprice, string Dest, string Depart, int Hotel, int page = 1, int pageSize = 2)
     {
-        IEnumerable<OffreModel> data = GetData(Minprice, Maxprice, Hotel, Dest, Depart);
+        IEnumerable<OffreModel> data = GetData(Minprice, Maxprice,villedest, Hotel, Dest, Depart);
         PagedList<OffreModel> model = new PagedList<OffreModel>(data, page, pageSize);
         return View(model);
     }
 
-    private List<OffreModel> GetData(int Minprice, int Maxprice, int Hotel, string Dest, string Depart)
+    private List<OffreModel> GetData(int Minprice, int Maxprice,string villedest, int Hotel, string Dest, string Depart)
     {
         //int price = Int32.Parse(prixmin);
         var query = _db.Offres.Include(d => d.id_Hotel).Include(d => d.id_Transport).AsQueryable();
-
+if (!string.IsNullOrEmpty(villedest))
+{query = query.Where(d => d.Ville_Arrivee.Contains(villedest));
+    
+}
         if (Minprice != 0)
         {
             query = query.Where(d => d.Price_Offre >= Minprice);
@@ -73,6 +77,7 @@ public class ClientController : Controller
         return query.ToList();
 
     }
+    
     public ActionResult Logout()
     {
         HttpContext.Session.Clear();//remove session

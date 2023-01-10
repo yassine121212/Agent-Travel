@@ -35,7 +35,7 @@ public class AdminController : Controller
         @ViewBag.nb_offres = _db.Offres.Count();
         var jsonData = JsonConvert.SerializeObject(commands.ToArray());
         var author_names = new[] { jsonData };
- 
+
         foreach (var item in author_names)
         {
             Console.WriteLine(item);
