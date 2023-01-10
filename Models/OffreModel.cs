@@ -22,9 +22,10 @@ public class OffreModel
     public string Picture_Offre { get; set; }
     [DataType(DataType.Text)]
     public string? Review { get; set; }
-    [Required]
-    [DataType(DataType.Text)]
-    public string City { get; set; }
+    [MaxLength(25)]
+    public string? City { get; set; }
+    [MaxLength(25)]
+    public string? Ville_Arrivee { get; set; }
     [Required]
     [DataType(DataType.Text)]
     public string Pays { get; set; }

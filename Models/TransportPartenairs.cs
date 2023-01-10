@@ -19,6 +19,12 @@ public class TransportPartenairsModel
     [DataType(DataType.ImageUrl)]
     public string Picture_Transport { get; set; }
 
+    [MaxLength(25)]
+    public string? Ville_depart { get; set; }
+    [MaxLength(25)]
+    public string? Ville_Arrivee { get; set; }
+    public DateTime? heure_depart { get; set; }
+    public DateTime? heure_Arrivee { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
