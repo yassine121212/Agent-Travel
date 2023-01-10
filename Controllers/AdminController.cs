@@ -33,12 +33,13 @@ public class AdminController : Controller
         @ViewBag.chiff_offres = offres_Ann.Sum(c => c.Price_Offre);
         @ViewBag.profit = commands.Sum(c => c.Total_Price);
         @ViewBag.nb_offres = _db.Offres.Count();
-        // var jsonData = JsonConvert.SerializeObject(commands.ToArray());
-        // var author_names = new[] { jsonData };
-        // foreach (var item in author_names)
-        // {
-        //     Console.WriteLine(item.Total_Price);
-        // }
+        var jsonData = JsonConvert.SerializeObject(commands.ToArray());
+        var author_names = new[] { jsonData };
+ 
+        foreach (var item in author_names)
+        {
+            Console.WriteLine(item);
+        }
         var salesData = new[] { 100, 200, 150, 300, 250, 400, 350, 500, 450, 600, 550, 650 };
         var periods = 12;
         var forecast = salesData.TakeLast(periods).Average();

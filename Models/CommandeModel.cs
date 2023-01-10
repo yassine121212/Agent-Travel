@@ -19,7 +19,7 @@ public class CommandeModel
     public DateTime Date { get; set; }
     [Required]
     [DataType(DataType.Currency)]
-    public double C { get; set; }
+    public double Total_Price { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
 }
