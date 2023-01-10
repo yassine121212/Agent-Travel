@@ -35,8 +35,25 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
+[/home/yassine/Desktop/Agent-Travel/Views/Admin/Edit_Offre.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vRWRpdF9PZmZyZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/yassine/Desktop/Agent-Travel/Views/Admin/GuidePartenaire.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vR3VpZGVQYXJ0ZW5haXJlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/yassine/Desktop/Agent-Travel/Views/Admin/HotelPartenaire.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vSG90ZWxQYXJ0ZW5haXJlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/yassine/Desktop/Agent-Travel/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vSW5kZXguY3NodG1s
+=======
 [C:/Users/Asus/Desktop/Agent/Agent-Travel/Views/Admin/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX1ZpZXdTdGFydC5jc2h0bWw=
+>>>>>>> d600c5c591989bf6f3083caa3ed9ecb17f5f3791
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Asus/Desktop/Agent/Agent-Travel/Views/Client/Index.cshtml]
@@ -47,8 +64,17 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
+[/home/yassine/Desktop/Agent-Travel/Views/Admin/TransportPartenaire.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vVHJhbnNwb3J0UGFydGVuYWlyZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/yassine/Desktop/Agent-Travel/Views/Admin/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+=======
 [C:/Users/Asus/Desktop/Agent/Agent-Travel/Views/Client/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XFByb2ZpbGUuY3NodG1s
+>>>>>>> d600c5c591989bf6f3083caa3ed9ecb17f5f3791
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Asus/Desktop/Agent/Agent-Travel/Views/Client/Register.cshtml]

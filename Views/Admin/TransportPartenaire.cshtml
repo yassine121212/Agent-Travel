@@ -1,0 +1,147 @@
+@model IEnumerable<TransportPartenairsModel>
+
+@{
+    ViewData["Title"] = "Display transports Page";
+}
+
+<div class="d-flex">
+    <div class="col-md-7">
+        <div class="card">
+            <div class="d-flex justify-content-end">
+                <i class="fa-solid fa-plus plus_1" data-bs-toggle="modal" data-bs-target="#transport"></i>
+            </div>
+            <div class="card-body">
+                <table class="table align-middle mb-0 bg-white ">
+                    <thead class="bg-light">
+                        <tr>
+                            <th style="text-align: center;">Transport</th>
+                            <th style="text-align: center;">Classe</th>
+                            <th style="text-align: center;">Categorie</th>
+                            <th style="text-align: center; min-width: 2.2cm;">Crée en</th>
+                            <th style="text-align: center;">Modifié en</th>
+                            <th style="text-align: center;">Plus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+
+                            <tr>
+                                <td style="text-align: center;max-width: fit-content;">
+                                    <div class="d-flex align-items-center">
+                                        <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt=""
+                                        style="width: 45px; height: 45px" class="rounded-circle" />
+                                        <div class="ms-3">
+                                            <p class="fw-bold mb-1">@item.Name_Transport</p>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td style="text-align: center;">
+                                    <span>@item.Classe</span>
+                                </td>
+                                <td style="text-align: center;">@item.Category</td>
+                                <td style="text-align: center;">
+                                    <div class="">
+                                        @item.CreatedAt
+                                    </div>
+                                </td>
+                                <td style="text-align: center;">
+                                    <div class="">
+                                        @item.UpdatedAt
+                                    </div>
+                                </td>
+                                <td class="d-flex justify-content-evenly align-items-center " style="height:3cm ;">
+                                    <div class="">
+                                        <i class="fa-solid fa-eye eye_class"></i>
+                                    </div>
+                                </td>
+
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- end card body -->
+        </div>
+        <!-- end card -->
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header justify-content-between d-flex align-items-center">
+                <h4 class="card-title">Statistiques</h4>
+            </div><!-- end card header -->
+            <div class="card-body">
+                <div id="line_chart_basic2" data-colors='["--bs-primary"]' class="apex-charts" dir="ltr"></div>
+            </div>
+        </div><!--end card-->
+    </div><!--end col-->
+    <!-- end col -->
+</div>
+<div class="modal fade" id="transport" tabindex="-1" aria-labelledby="transport" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="transport">Transport partenaire</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="needs-validation" method="post" asp-controller="Admin" asp-action="Add_Transport"
+                    novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="validationCustom01">Nom de Transport</label>
+                                <input type="text" class="form-control" id="validationCustom01"
+                                    placeholder="Ajouter le nom" name="Name_Transport" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+
+                        <div class="col-md-6 " style="top:-0.25cm">
+                            <div class="mb-3">
+                                <label class="col-md-2 col-form-label">Classe</label>
+                                <div class="col-md-10">
+                                    <select name="Classe" class="form-select">
+                                        <option name="A">Classe A</option>
+                                        <option name="B">Classe B</option>
+                                        <option name="C">Classe C</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+
+
+                    </div><!-- end row -->
+                    <div class="row">
+                        <label class="col-form-label">Categorie</label>
+                        <div class="" style="width: 50%;">
+                            <select name="Category" class="form-select">
+                                <option name="Category">Bus</option>
+                                <option name="Category">Voiture</option>
+                                <option name="Category">Motor</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 ">
+                            <div>
+                                <label for="formFileLg" class="form-label"
+                                    style="margin-top:-1cm !important; position: absolute;">Ajouter
+                                    une photo</label>
+                                <input class="form-control form-control" name="Picture_Transport" id="formFileLg"
+                                    type="file">
+                            </div>
+                        </div> <!-- end col -->
+
+                    </div><!-- end row -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                        <button type="submit" class="btn btn-primary">Ajouter Transport</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

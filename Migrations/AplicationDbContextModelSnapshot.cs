@@ -143,13 +143,13 @@ namespace dotn.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("IdGuide")
+                    b.Property<int?>("IdGuide")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdHotel")
+                    b.Property<int?>("IdHotel")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdTransport")
+                    b.Property<int?>("IdTransport")
                         .HasColumnType("int");
 
                     b.Property<string>("Pays")
@@ -164,7 +164,6 @@ namespace dotn.Migrations
                         .HasColumnType("float");
 
                     b.Property<string>("Review")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title_Offre")
@@ -301,21 +300,15 @@ namespace dotn.Migrations
                 {
                     b.HasOne("dotn.Models.GuidePartenairsModel", "id_Guide")
                         .WithMany()
-                        .HasForeignKey("IdGuide")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdGuide");
 
                     b.HasOne("dotn.Models.HotelPartenairsModel", "id_Hotel")
                         .WithMany()
-                        .HasForeignKey("IdHotel")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdHotel");
 
                     b.HasOne("dotn.Models.TransportPartenairsModel", "id_Transport")
                         .WithMany()
-                        .HasForeignKey("IdTransport")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdTransport");
 
                     b.Navigation("id_Guide");
 

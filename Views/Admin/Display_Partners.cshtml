@@ -1,0 +1,440 @@
+@{
+    ViewData["Title"] = "Display Partners Page";
+}
+
+<div class="d-flex " style="margin-top: 2cm;">
+    <div class="col-md-7">
+        <div class="card">
+            <div class="d-flex justify-content-end">
+                <i class="fa-solid fa-plus plus_1" data-bs-toggle="modal" data-bs-target="#hotel"></i>
+            </div>
+            <div class="card-body">
+
+                <table class="table align-middle mb-0 bg-white">
+                    <thead class="bg-light">
+                        <tr>
+                            <th style="text-align: center;">Hotel</th>
+                            <th style="text-align: center;">Ville</th>
+                            <th style="text-align: center;">Rating</th>
+                            <th style="text-align: center;">Crée en</th>
+                            <th style="text-align: center;">Modifié en</th>
+                            <th style="text-align: center;">Plus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="text-align: center;">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt=""
+                                        style="width: 45px; height: 45px" class="rounded-circle" />
+                                    <div class="ms-3">
+                                        <p class="fw-bold mb-1">John Doe</p>
+                                        <p class="text-muted mb-0">john.doe@gmail.com</p>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td style="text-align: center;">
+                                <span class="badge badge-success rounded-pill d-inline">Active</span>
+                            </td>
+                            <td style="text-align: center;">Senior</td>
+                            <td style="text-align: center;">
+                                <button type="button" class="btn btn-link btn-sm btn-rounded">
+                                    Edit
+                                </button>
+                            </td>
+                            <td style="text-align: center;">
+                                <div class="">
+                                    17/02/2022
+                                </div>
+                            </td>
+                            <td class="d-flex justify-content-evenly align-items-center " style="height:2cm ;">
+                                <div class="">
+                                    <i class="fa-solid fa-eye eye_class"></i>
+                                </div>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- end card body -->
+        </div>
+        <!-- end card -->
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header justify-content-between d-flex align-items-center">
+                <h4 class="card-title">Statistiques</h4>
+            </div><!-- end card header -->
+            <div class="card-body">
+                <div id="line_chart_basic" data-colors='["--bs-primary"]' class="apex-charts" dir="ltr"></div>
+            </div>
+        </div><!--end card-->
+    </div><!--end col-->
+    <!-- end col -->
+</div>
+
+
+<div class="d-flex">
+    <div class="col-md-7">
+        <div class="card">
+            <div class="d-flex justify-content-end">
+                <i class="fa-solid fa-plus plus_1" data-bs-toggle="modal" data-bs-target="#transport"></i>
+            </div>
+            <div class="card-body">
+                <table class="table align-middle mb-0 bg-white ">
+                    <thead class="bg-light">
+                        <tr>
+                            <th style="text-align: center;">Transport</th>
+                            <th style="text-align: center;">Classe</th>
+                            <th style="text-align: center;">Categorie</th>
+                            <th style="text-align: center; min-width: 2.2cm;">Crée en</th>
+                            <th style="text-align: center;">Modifié en</th>
+                            <th style="text-align: center;">Plus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="text-align: center;max-width: fit-content;">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt=""
+                                        style="width: 45px; height: 45px" class="rounded-circle" />
+                                    <div class="ms-3">
+                                        <p class="fw-bold mb-1">John Doe</p>
+                                        <p class="text-muted mb-0">john.doe@gmail.com</p>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td style="text-align: center;">
+                                <span class="badge badge-success rounded-pill d-inline">Active</span>
+                            </td>
+                            <td style="text-align: center;">Senior</td>
+                            <td style="text-align: center;">
+                                <button type="button" class="btn btn-link btn-sm btn-rounded">
+                                    Edit
+                                </button>
+                            </td>
+                            <td style="text-align: center;">
+                                <div class="">
+                                    17/02/2022
+                                </div>
+                            </td>
+                            <td class="d-flex justify-content-evenly align-items-center " style="height:2cm ;">
+                                <div class="">
+                                    <i class="fa-solid fa-eye eye_class"></i>
+                                </div>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- end card body -->
+        </div>
+        <!-- end card -->
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header justify-content-between d-flex align-items-center">
+                <h4 class="card-title">Statistiques</h4>
+            </div><!-- end card header -->
+            <div class="card-body">
+                <div id="line_chart_basic2" data-colors='["--bs-primary"]' class="apex-charts" dir="ltr"></div>
+            </div>
+        </div><!--end card-->
+    </div><!--end col-->
+    <!-- end col -->
+</div>
+
+
+<div class="d-flex">
+    <div class="col-md-7">
+        <div class="card">
+            <div class="d-flex justify-content-end">
+                <i class="fa-solid fa-plus plus_1" data-bs-toggle="modal" data-bs-target="#guide"></i>
+            </div>
+            <div class="card-body">
+                <table class="table align-middle mb-0 bg-white">
+                    <thead class="bg-light">
+                        <tr>
+                            <th style="text-align: center;">Guide</th>
+                            <th style="text-align: center;">Ville</th>
+                            <th style="text-align: center;">Téléphone</th>
+                            <th style="text-align: center; min-width: 2.2cm;">Crée en</th>
+                            <th style="text-align: center;">Modifié en</th>
+                            <th style="text-align: center;">Plus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="text-align: center;">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt=""
+                                        style="width: 45px; height: 45px" class="rounded-circle" />
+                                    <div class="ms-3">
+                                        <p class="fw-bold mb-1">John Doe</p>
+                                        <p class="text-muted mb-0">john.doe@gmail.com</p>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td style="text-align: center;">
+                                <span class="badge badge-success rounded-pill d-inline">Active</span>
+                            </td>
+                            <td style="text-align: center;">Senior</td>
+                            <td style="text-align: center;">
+                                <button type="button" class="btn btn-link btn-sm btn-rounded">
+                                    Edit
+                                </button>
+                            </td>
+                            <td style="text-align: center;">
+                                <div class="">
+                                    17/02/2022
+                                </div>
+                            </td>
+                            <td class="d-flex justify-content-evenly align-items-center " style="height:2cm ;">
+                                <div class="">
+                                    <i class="fa-solid fa-eye eye_class"></i>
+                                </div>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- end card body -->
+        </div>
+        <!-- end card -->
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header justify-content-between d-flex align-items-center">
+                <h4 class="card-title">Statistiques</h4>
+            </div><!-- end card header -->
+            <div class="card-body">
+                <div id="line_chart_basic3" data-colors='["--bs-primary"]' class="apex-charts" dir="ltr"></div>
+            </div>
+        </div><!--end card-->
+    </div><!--end col-->
+    <!-- end col -->
+</div>
+
+
+
+<div class="modal fade" id="hotel" tabindex="-1" aria-labelledby="hotel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="hotel">Hotel partenaire</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="needs-validation" method="post" asp-controller="Admin" asp-action="Add_Hotel" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="validationCustom01">Nom de l'hotel</label>
+                                <input type="text" class="form-control" id="validationCustom01"
+                                    placeholder="Ajouter le nom" name="Name_Hotel" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="validationCustom03">Ville</label>
+                                <input type="text" class="form-control" id="validationCustom03"
+                                    placeholder="Ajouter la ville" name="City_Hotel" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid Ville.
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+
+
+                    </div><!-- end row -->
+                    <div class="row">
+                        <div class="col-md-6 row ">
+                            <span class="">Notation</span>
+                            <div class="rating " style="left:-0.7cm ;">
+                                <input type="radio" name="Rating" value="5" id="5"><label for="5">☆</label>
+                                <input type="radio" name="Rating" value="4" id="4"><label for="4">☆</label>
+                                <input type="radio" name="Rating" value="3" id="3"><label for="3">☆</label>
+                                <input type="radio" name="Rating" value="2" id="2"><label for="2">☆</label>
+                                <input type="radio" name="Rating" value="1" id="1"><label for="1">☆</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+                            <div>
+                                <label for="formFileLg" class="form-label">Ajouter
+                                    une photo</label>
+                                <input class="form-control form-control" name="Picture_Hotel" id="formFileLg"
+                                    type="file">
+                            </div>
+                        </div> <!-- end col -->
+                        <div class="form-group col-md-12">
+                            <label for="exampleFormControlTextarea1">Description</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" name="Description"
+                                rows="3"></textarea>
+                        </div>
+
+                    </div><!-- end row -->
+           
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                <button type="submit" class="btn btn-danger">Ajouter Hotel</button>
+            </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="transport" tabindex="-1" aria-labelledby="transport" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="transport">Transport partenaire</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="needs-validation" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="validationCustom01">Nom de Transport</label>
+                                <input type="text" class="form-control" id="validationCustom01"
+                                    placeholder="Ajouter le nom" value="" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+
+                        <div class="col-md-6 " style="top:-0.25cm">
+                            <div class="mb-3">
+                                <label class="col-md-2 col-form-label">Classe</label>
+                                <div class="col-md-10">
+                                    <select class="form-select">
+                                        <option>Classe A</option>
+                                        <option>Classe B</option>
+                                        <option>Classe C</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+
+
+                    </div><!-- end row -->
+                    <div class="row">
+                        <label class="col-form-label">Categorie</label>
+                        <div class="" style="width: 50%;">
+                            <select class="form-select">
+                                <option>Bus</option>
+                                <option>Voiture</option>
+                                <option>Motor</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 ">
+                            <div>
+                                <label for="formFileLg" class="form-label"
+                                    style="margin-top:-1cm !important; position: absolute;">Ajouter
+                                    une photo</label>
+                                <input class="form-control form-control" id="formFileLg" type="file">
+                            </div>
+                        </div> <!-- end col -->
+                        <div class="form-group col-md-12 " style="margin-top: 0.5cm;">
+                            <label for="exampleFormControlTextarea1">Description</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+
+                    </div><!-- end row -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                <button type="button" class="btn btn-primary">Ajouter Transport</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="guide" tabindex="-1" aria-labelledby="guide" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="guide">Guide partenaire</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="needs-validation" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="validationCustom01">Nom de Guide</label>
+                                <input type="text" class="form-control" id="validationCustom01"
+                                    placeholder="Ajouter le nom" value="" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="validationCustom03">Ville</label>
+                                <input type="text" class="form-control" id="validationCustom03"
+                                    placeholder="Ajouter la ville" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid Ville.
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+
+
+                    </div><!-- end row -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="validationCustom03">Téléphone</label>
+                                <input type="text" class="form-control" id="validationCustom03" placeholder="mobile/fix"
+                                    required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid Téléphone.
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="validationCustom03">Email</label>
+                                <input type="text" class="form-control" id="validationCustom03"
+                                    placeholder="Ajouter Email" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid Email.
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+                        <div class="col-md-6 ">
+                            <div>
+                                <label for="formFileLg" class="form-label">Ajouter
+                                    une photo</label>
+                                <input class="form-control form-control" id="formFileLg" type="file">
+                            </div>
+                        </div> <!-- end col -->
+
+
+                    </div><!-- end row -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                <button type="button" class="btn btn-danger">Ajouter Guide</button>
+            </div>
+        </div>
+    </div>
+</div>

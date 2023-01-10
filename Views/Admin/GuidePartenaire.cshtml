@@ -1,0 +1,158 @@
+@model IEnumerable<GuidePartenairsModel>
+
+@{
+    ViewData["Title"] = "Display Guide Page";
+}
+
+
+
+
+<div class="d-flex">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="d-flex justify-content-end">
+                <i class="fa-solid fa-plus plus_1" data-bs-toggle="modal" data-bs-target="#guide"></i>
+            </div>
+            <div class="card-body">
+                <table class="table align-middle mb-0 bg-white">
+                    <thead class="bg-light">
+                        <tr>
+                            <th style="text-align: center;">Guide</th>
+                            <th style="text-align: center;">Ville</th>
+                            <th style="text-align: center;">Téléphone</th>
+                            <th style="text-align: center; min-width: 2.2cm;">Crée en</th>
+                            <th style="text-align: center;">Modifié en</th>
+                            <th style="text-align: center;">Plus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+
+                            <tr>
+                                <td style="text-align: center;">
+                                    <div class="d-flex align-items-center">
+                                        <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt=""
+                                        style="width: 45px; height: 45px" class="rounded-circle" />
+                                        <div class="ms-3">
+                                            <p class="fw-bold mb-1">@item.Name_Guide</p>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td style="text-align: center;">
+                                    <span >@item.City_Guide</span>
+                                </td>
+                                <td style="text-align: center;">@item.Phone_Guide</td>
+                                <td style="text-align: center;">
+                                    <div class="">
+                                        @item.CreatedAt
+                                    </div>
+                                </td>
+                                <td style="text-align: center;">
+                                    <div class="">
+                                        @item.UpdatedAt
+                                    </div>
+                                </td>
+                                <td class="d-flex justify-content-evenly align-items-center " style="height:2cm ;">
+                                    <div class="">
+                                        <i class="fa-solid fa-eye eye_class"></i>
+                                    </div>
+                                </td>
+
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- end card body -->
+        </div>
+        <!-- end card -->
+    </div>
+    <div class="col-lg-5">
+        <div class="card">
+            <div class="card-header justify-content-between d-flex align-items-center">
+                <h4 class="card-title">Statistiques</h4>
+            </div><!-- end card header -->
+            <div class="card-body">
+                <div id="line_chart_basic3" data-colors='["--bs-primary"]' class="apex-charts" dir="ltr"></div>
+            </div>
+        </div><!--end card-->
+    </div><!--end col-->
+    <!-- end col -->
+</div>
+<div class="modal fade" id="guide" tabindex="-1" aria-labelledby="guide" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="guide">Guide partenaire</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="needs-validation" method="post" asp-controller="Admin" asp-action="Add_Guide" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="validationCustom01">Nom de Guide</label>
+                                <input type="text" class="form-control" id="validationCustom01"
+                                    placeholder="Ajouter le nom" name="Name_Guide" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="validationCustom03">Ville</label>
+                                <input type="text" class="form-control" id="validationCustom03"
+                                    placeholder="Ajouter la ville" name="City_Guide" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid Ville.
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+
+
+                    </div><!-- end row -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="validationCustom03">Téléphone</label>
+                                <input type="text" class="form-control" name="Phone_Guide" id="validationCustom03"
+                                    placeholder="mobile/fix" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid Téléphone.
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="validationCustom03">Email</label>
+                                <input type="text" class="form-control" name="Email" id="validationCustom03"
+                                    placeholder="Ajouter Email" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid Email.
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+                        <div class="col-md-6 ">
+                            <div>
+                                <label for="formFileLg" class="form-label">Ajouter
+                                    une photo</label>
+                                <input class="form-control form-control" id="formFileLg" type="file">
+                            </div>
+                        </div> <!-- end col -->
+
+
+                    </div><!-- end row -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                        <button type="submit" class="btn btn-danger">Ajouter Guide</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
