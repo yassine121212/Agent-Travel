@@ -9,17 +9,17 @@ public class CommandeModel
     [Key]
     public int Id { get; set; }
     [Required]
-    [ForeignKey("Id")]
+    [ForeignKey("IdUser")]
     public UserModel id_user { get; set; }
     [Required]
-    [ForeignKey("Id")]
+    [ForeignKey("IdOffre")]
     public OffreModel id_offre { get; set; }
     [Required]
     [DataType(DataType.Date)]
     public DateTime Date { get; set; }
     [Required]
     [DataType(DataType.Currency)]
-    public double Total_Price { get; set; }
+    public double C { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
 }

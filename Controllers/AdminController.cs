@@ -3,8 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using dotn.Models;
 using dotn.Dto;
 using dotn.Data;
-
-
+using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using System.Linq;
 namespace dotn.Controllers;
 
 public class AdminController : Controller
@@ -13,7 +14,7 @@ public class AdminController : Controller
 
     private readonly ILogger<AdminController> _logger;
 
-    public AdminController(ILogger<AdminController> logger,AplicationDbContext db)
+    public AdminController(ILogger<AdminController> logger, AplicationDbContext db)
     {
         _logger = logger;
         _db = db;
@@ -21,9 +22,30 @@ public class AdminController : Controller
 
     public IActionResult Index()
     {
+        var currentYear = DateTime.Now.Year;
+        var currentDay = DateTime.Now.Day;
+
+        var commands = _db.Commandes.Include(s => s.id_offre).Where(c => c.id_offre.CreatedAt.Year == currentYear).ToList();
+        var offres_Ann = _db.Offres.Where(c => c.CreatedAt.Year == currentYear).ToList();
+        var commands_Day = _db.Commandes.Include(s => s.id_offre).Where(c => c.id_offre.CreatedAt.Day == currentDay && c.id_offre.CreatedAt.Year == currentYear).ToList();
+
+        @ViewBag.chiff_offres_Day = commands_Day.Sum(c => c.Total_Price);
+        @ViewBag.chiff_offres = offres_Ann.Sum(c => c.Price_Offre);
+        @ViewBag.profit = commands.Sum(c => c.Total_Price);
+        @ViewBag.nb_offres = _db.Offres.Count();
+        // var jsonData = JsonConvert.SerializeObject(commands.ToArray());
+        // var author_names = new[] { jsonData };
+        // foreach (var item in author_names)
+        // {
+        //     Console.WriteLine(item.Total_Price);
+        // }
+        var salesData = new[] { 100, 200, 150, 300, 250, 400, 350, 500, 450, 600, 550, 650 };
+        var periods = 12;
+        var forecast = salesData.TakeLast(periods).Average();
+        Console.WriteLine("forecast: " + forecast);
         return View();
     }
-     public IActionResult Display_Offres(int? id)
+    public IActionResult Display_Offres(int? id)
     {
         // if(id==null || id == 0)
         // {
@@ -31,26 +53,27 @@ public class AdminController : Controller
         // return View(offreDb);
 
         // }
-              
-      IEnumerable<OffreModel> objOffresList = _db.Offres;
+
+        IEnumerable<OffreModel> objOffresList = _db.Offres;
 
         return View(objOffresList);
     }
-    public IActionResult Add_Offre(){
+    public IActionResult Add_Offre()
+    {
         return View();
     }
     [HttpPost]
     [ValidateAntiForgeryToken]
-     public IActionResult Add_Offre(OffreModel obj)
+    public IActionResult Add_Offre(OffreModel obj)
     {
-         _db.Offres.Add(obj);
-            _db.SaveChanges();
-            return RedirectToAction("Display_Offres");
-       
+        _db.Offres.Add(obj);
+        _db.SaveChanges();
+        return RedirectToAction("Display_Offres");
+
     }
-     public IActionResult Edit_Offre(int? id)
+    public IActionResult Edit_Offre(int? id)
     {
-        if(id==null || id == 0)
+        if (id == null || id == 0)
         {
             return NotFound();
         }
@@ -65,14 +88,14 @@ public class AdminController : Controller
 
         return View(offreDb);
     }
-       [HttpPost]
+    [HttpPost]
     [ValidateAntiForgeryToken]
-     public IActionResult Edit_Offre(OffreModel obj)
+    public IActionResult Edit_Offre(OffreModel obj)
     {
-         _db.Offres.Update(obj);
-            _db.SaveChanges();
-            return RedirectToAction("Display_Offres");
-       
+        _db.Offres.Update(obj);
+        _db.SaveChanges();
+        return RedirectToAction("Display_Offres");
+
     }
 
     public IActionResult Delete(int? id)
@@ -84,82 +107,82 @@ public class AdminController : Controller
         }
 
         _db.Offres.Remove(obj);
-            _db.SaveChanges();
+        _db.SaveChanges();
         TempData["success"] = "Category deleted successfully";
         return RedirectToAction("Display_Offres");
-        
+
     }
     public IActionResult Display_Users()
     {
         return View();
     }
-     public IActionResult Add_User()
+    public IActionResult Add_User()
     {
         return View();
     }
- public IActionResult Display_Partners()
-    {     
-       
+    public IActionResult Display_Partners()
+    {
+
         return View();
     }
-     public IActionResult Add_Partner()
+    public IActionResult Add_Partner()
     {
         return View();
     }
-    
-     public IActionResult HotelPartenaire()
-    {     
-             IEnumerable<HotelPartenairsModel> hotels = _db.HotelPartenairs;
+
+    public IActionResult HotelPartenaire()
+    {
+        IEnumerable<HotelPartenairsModel> hotels = _db.HotelPartenairs;
 
         return View(hotels);
     }
-     public IActionResult TransportPartenaire()
-    {     
-                    IEnumerable<TransportPartenairsModel> transports = _db.TransportPartenairs;
+    public IActionResult TransportPartenaire()
+    {
+        IEnumerable<TransportPartenairsModel> transports = _db.TransportPartenairs;
 
         return View(transports);
     }
-     public IActionResult GuidePartenaire()
-    {     
-                           IEnumerable<GuidePartenairsModel> Guides = _db.GuidePartenairs;
+    public IActionResult GuidePartenaire()
+    {
+        IEnumerable<GuidePartenairsModel> Guides = _db.GuidePartenairs;
 
         return View(Guides);
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-     public IActionResult Add_Hotel(HotelPartenairsModel obj)
+    public IActionResult Add_Hotel(HotelPartenairsModel obj)
     {
-         _db.HotelPartenairs.Add(obj);
-            _db.SaveChanges();
-            return RedirectToAction("HotelPartenaire");
+        _db.HotelPartenairs.Add(obj);
+        _db.SaveChanges();
+        return RedirectToAction("HotelPartenaire");
     }
 
- [HttpPost]
+    [HttpPost]
     [ValidateAntiForgeryToken]
-     public IActionResult Add_Transport(TransportPartenairsModel obj)
+    public IActionResult Add_Transport(TransportPartenairsModel obj)
     {
-         _db.TransportPartenairs.Add(obj);
-            _db.SaveChanges();
-            return RedirectToAction("TransportPartenaire");
+        _db.TransportPartenairs.Add(obj);
+        _db.SaveChanges();
+        return RedirectToAction("TransportPartenaire");
     }
 
 
- [HttpPost]
+    [HttpPost]
     [ValidateAntiForgeryToken]
-     public IActionResult Add_Guide(GuidePartenairsModel obj)
+    public IActionResult Add_Guide(GuidePartenairsModel obj)
     {
-         _db.GuidePartenairs.Add(obj);
-            _db.SaveChanges();
-            return RedirectToAction("GuidePartenaire");
+        _db.GuidePartenairs.Add(obj);
+        _db.SaveChanges();
+        return RedirectToAction("GuidePartenaire");
     }
 
 
 
-    
 
 
-    
+
+
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
