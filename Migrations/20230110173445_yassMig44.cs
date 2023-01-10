@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace dotn.Migrations
 {
     /// <inheritdoc />
-    public partial class MultipleMigration : Migration
+    public partial class yassMig44 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -139,7 +139,10 @@ namespace dotn.Migrations
                 name: "Commandes",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    IdUser = table.Column<int>(type: "int", nullable: false),
+                    IdOffre = table.Column<int>(type: "int", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     TotalPrice = table.Column<double>(name: "Total_Price", type: "float", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -149,18 +152,28 @@ namespace dotn.Migrations
                 {
                     table.PrimaryKey("PK_Commandes", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Commandes_Offres_Id",
-                        column: x => x.Id,
+                        name: "FK_Commandes_Offres_IdOffre",
+                        column: x => x.IdOffre,
                         principalTable: "Offres",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Commandes_Users_Id",
-                        column: x => x.Id,
+                        name: "FK_Commandes_Users_IdUser",
+                        column: x => x.IdUser,
                         principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Commandes_IdOffre",
+                table: "Commandes",
+                column: "IdOffre");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Commandes_IdUser",
+                table: "Commandes",
+                column: "IdUser");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Offres_IdGuide",
