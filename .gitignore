@@ -16,7 +16,7 @@
 # Mono auto generated files
 mono_crash.*
 bin/*
-obj/* -f
+obj/*
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -456,3 +456,4 @@ $RECYCLE.BIN/
 !.vscode/extensions.json
 bin/Debug/net6.0/dotn.dll
 bin/Debug/net6.0/dotn.dll
+*.dll

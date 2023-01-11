@@ -18,7 +18,7 @@
             <div class="card-body">
                 <form class="needs-validation" method="post" novalidate>
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="mb-3">
                                 <label class="form-label" for="validationCustom01">Titre de l'offre</label>
                                 <input type="text" class="form-control" id="validationCustom01" name="Title_Offre"
@@ -65,17 +65,6 @@
                                 </div>
                             </div>
                         </div><!-- end col -->
-                        <div class="col-md-1">
-                            <div class="mb-3 position-relative">
-                                <label class="form-label" for="validationTooltipUsername">Places</label>
-                                <div class="input-group">
-
-                                    <input type="number" class="form-control" name="Price_Offre"
-                                        id="validationTooltipUsername" placeholder="num"
-                                        aria-describedby="validationTooltipUsernamePrepend" required>
-                                </div>
-                            </div>
-                        </div><!-- end col -->
 
                     </div><!-- end row -->
                     <div class="row">
@@ -91,13 +80,32 @@
                                 <input type="date" class="form-control" id="datepicker-basic">
                             </div>
                         </div><!-- end col -->
-                        <div class="col-md-4 ">
-                            <div>
-                                <label for="formFileLg" class="form-label">Ajouter
-                                    une photo</label>
-                                <input class="form-control form-control" name="Picture_Offre" id="formFileLg"
-                                    type="file">
-                            </div>
+                        <div class="col-md-4 " style="margin-top: -0.2cm;">
+                            <div class="card">
+                                <div class="card-header justify-content-between d-flex align-items-center">
+                                    <h4 class="card-title">Dropzone</h4>
+                                </div><!-- end card header -->
+                                <div class="card-body">
+                                    <div>
+
+                                        <div clasDescription_Offres="fallback">
+                                            <input name="Picture_Offre" value="pic.png" type="file" multiple="multiple"
+                                                required>
+                                        </div>
+                                        <div class="dz-message needsclick">
+                                            <div class="mb-3">
+                                                <i class="display-4 text-muted uil uil-cloud-upload"></i>
+                                            </div>
+
+                                            <h1>Inserer une photo</h1>
+                                        </div>
+
+                                        <!-- end form -->
+                                    </div>
+
+
+                                </div>
+                            </div><!-- end card -->
                         </div> <!-- end col -->
                         <div class="form-group col-md-12">
                             <div class="" style="display: flex; justify-content: space-between;">

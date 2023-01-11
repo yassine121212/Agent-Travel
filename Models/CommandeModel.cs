@@ -9,10 +9,10 @@ public class CommandeModel
     [Key]
     public int Id { get; set; }
     [Required]
-    [ForeignKey("IdUser")]
+    [ForeignKey("Id")]
     public UserModel id_user { get; set; }
     [Required]
-    [ForeignKey("IdOffre")]
+    [ForeignKey("Id")]
     public OffreModel id_offre { get; set; }
     [Required]
     [DataType(DataType.Date)]

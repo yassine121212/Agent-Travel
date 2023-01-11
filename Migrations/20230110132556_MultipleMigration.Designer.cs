@@ -12,15 +12,15 @@ using dotn.Data;
 namespace dotn.Migrations
 {
     [DbContext(typeof(AplicationDbContext))]
-    [Migration("20230111114109_yassMig48")]
-    partial class yassMig48
+    [Migration("20230110132556_MultipleMigration")]
+    partial class MultipleMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.2")
+                .HasAnnotation("ProductVersion", "7.0.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -28,22 +28,13 @@ namespace dotn.Migrations
             modelBuilder.Entity("dotn.Models.CommandeModel", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("IdOffre")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdUser")
-                        .HasColumnType("int");
 
                     b.Property<double>("Total_Price")
                         .HasColumnType("float");
@@ -52,10 +43,6 @@ namespace dotn.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("IdOffre");
-
-                    b.HasIndex("IdUser");
 
                     b.ToTable("Commandes");
                 });
@@ -193,9 +180,6 @@ namespace dotn.Migrations
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
-                    b.Property<int?>("max_places")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("IdGuide");
@@ -318,13 +302,13 @@ namespace dotn.Migrations
                 {
                     b.HasOne("dotn.Models.OffreModel", "id_offre")
                         .WithMany()
-                        .HasForeignKey("IdOffre")
+                        .HasForeignKey("Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("dotn.Models.UserModel", "id_user")
                         .WithMany()
-                        .HasForeignKey("IdUser")
+                        .HasForeignKey("Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

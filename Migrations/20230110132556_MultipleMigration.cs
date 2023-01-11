@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace dotn.Migrations
 {
     /// <inheritdoc />
-    public partial class yassMig48 : Migration
+    public partial class MultipleMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -106,7 +106,6 @@ namespace dotn.Migrations
                     Review = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     City = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: true),
                     VilleArrivee = table.Column<string>(name: "Ville_Arrivee", type: "nvarchar(25)", maxLength: 25, nullable: true),
-                    maxplaces = table.Column<int>(name: "max_places", type: "int", nullable: true),
                     Pays = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DateEnd = table.Column<DateTime>(name: "Date_End", type: "datetime2", nullable: false),
                     DateBegin = table.Column<DateTime>(name: "Date_Begin", type: "datetime2", nullable: false),
@@ -140,10 +139,7 @@ namespace dotn.Migrations
                 name: "Commandes",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    IdUser = table.Column<int>(type: "int", nullable: false),
-                    IdOffre = table.Column<int>(type: "int", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     TotalPrice = table.Column<double>(name: "Total_Price", type: "float", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -153,28 +149,18 @@ namespace dotn.Migrations
                 {
                     table.PrimaryKey("PK_Commandes", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Commandes_Offres_IdOffre",
-                        column: x => x.IdOffre,
+                        name: "FK_Commandes_Offres_Id",
+                        column: x => x.Id,
                         principalTable: "Offres",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Commandes_Users_IdUser",
-                        column: x => x.IdUser,
+                        name: "FK_Commandes_Users_Id",
+                        column: x => x.Id,
                         principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Commandes_IdOffre",
-                table: "Commandes",
-                column: "IdOffre");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Commandes_IdUser",
-                table: "Commandes",
-                column: "IdUser");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Offres_IdGuide",
