@@ -1,6 +1,12 @@
 @{
     ViewData["Title"] = "Add Offre Page";
 }
+@{
+    var hotels = ViewBag.Hotels as List<HotelPartenairsModel>;
+    var transports=ViewBag.Transports as List<TransportPartenairsModel>;
+    var guides = ViewBag.guides as List<GuidePartenairsModel>;
+
+}
 <div class="main-content">
 
 
@@ -101,17 +107,201 @@
                                 </div>
                             </div><!-- end card -->
                         </div> <!-- end col -->
+                        <div class="form-group col-md-12">
+                            <div class="" style="display: flex; justify-content: space-between;">
+                                <div class="" style="width: 50%;">
+                                    <label for="exampleFormControlTextarea1">Description</label>
+                                    <textarea class="form-control" name="Description_Offre"
+                                        id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                                <div style="display: flex;flex-direction: column; gap: 0.5cm; margin-top: 0.5cm; ">
+ 
+                                        <button type="button" data-bs-toggle="modal"
+                                            data-bs-target=".bs-example-modal-center" class="butt_Add_P ">
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                                    height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z"></path>
+                                                    <path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z">
+                                                    </path>
+                                                </svg> Ajouter un Partenaire
+                                            </span>
+                                        </button>
+                                         <button class="butt_Add_Psubmit" style="" type="submit">Envoyer</button>
+                                        <div class="card-body">
+                                            <!-- center modal -->
+                                            <div class="modal mymodalP fade bs-example-modal-center"  tabindex="-1" role="dialog"
+                                                aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                                <div  class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">Partenaires 📃</h5>
+                                                        </div>
+                                                        <div class="modal-body" >
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <div class="nav flex-column nav-pills"
+                                                                        id="v-pills-tab" role="tablist"
+                                                                        aria-orientation="vertical">
+                                                                        <a class="nav-link mb-2 active"
+                                                                            id="v-pills-home-tab" data-bs-toggle="pill"
+                                                                            href="#v-pills-home" role="tab"
+                                                                            aria-controls="v-pills-home"
+                                                                            aria-selected="true">Hotels</a>
+                                                                        <a class="nav-link mb-2"
+                                                                            id="v-pills-profile-tab"
+                                                                            data-bs-toggle="pill"
+                                                                            href="#v-pills-profile" role="tab"
+                                                                            aria-controls="v-pills-profile"
+                                                                            aria-selected="false">Transports</a>
+                                                                        <a class="nav-link mb-2"
+                                                                            id="v-pills-messages-tab"
+                                                                            data-bs-toggle="pill"
+                                                                            href="#v-pills-messages" role="tab"
+                                                                            aria-controls="v-pills-messages"
+                                                                            aria-selected="false">Guides</a>
 
-                        <div class="form-group col-md-7" style="margin-top: -4.1cm;">
-                            <label for="exampleFormControlTextarea1">Description</label>
-                            <textarea class="form-control" name="Description_Offre" id="exampleFormControlTextarea1"
-                                rows="3"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-9">
+                                                                    <div class="tab-content text-muted mt-4 mt-md-0"  style="overflow: auto;" 
+                                                                        id="v-pills-tabContent">
+                                                                        <div class="tab-pane fade show active"
+                                                                            id="v-pills-home" role="tabpanel"
+                                                                            aria-labelledby="v-pills-home-tab">
+                                                                         @foreach (var item in hotels)
+                                                                         {   
+                                                                            <div class="container_P">
+
+                                                                                <div class="bg-blue"></div>
+                                                                                <div class="row">
+                                                                                    <div class="col-12 border-bottom px-4 py-2">
+                                                                                        <div class="row p-0">
+                                                                                            <div class=" col-md-2 d-flex justify-content-center">
+                                                                                                <img class="pic mb-md-0 mb-3"
+                                                                                                    src="https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                                                                                                    alt="">
+                                                                                            </div>
+                                                                                            <div class="col-md-10 ">
+                                                                                                <div class="d-flex justify-content-between">
+                                                                                                <p class="h-blue">@item.Name_Hotel</p>
+                                                                                                    @{
+                                                                                                                    int i = 0;
+                                                                                                                    while (i <@item.Rating)
+                                                                                                                    {
+                                                                                                                        <span>⭐</span>
+                                                                                                                        i++;
+                                                                                                                    }
+                                                                                                     }
+                                                                                                  
+                                                                                                </div>
+                                                                                                <p class="textmuted">@item.Description</p>
+                                                                                             <div class="d-flex justify-content-end">
+                                                                                                            <i class="fa-solid fa-plus plus_1" ></i>
+                                                                                                        </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    
+                                                                                </div>
+                                                                              </div>                                                                      
+                                                                         }
+                                                                        </div>
+                                                                        <div class="tab-pane fade show active"
+                                                                            id="v-pills-profile" role="tabpanel"
+                                                                            aria-labelledby="v-pills-profile-tab">
+                                                                         @foreach (var item in transports)
+                                                                         {   
+                                                                            <div class="container_P">
+
+                                                                                <div class="bg-blue"></div>
+                                                                                <div class="row">
+                                                                                    <div class="col-12 border-bottom px-4 py-2">
+                                                                                        <div class="row p-0">
+                                                                                            <div class=" col-md-2 d-flex justify-content-center">
+                                                                                                <img class="pic mb-md-0 mb-3"
+                                                                                                    src="https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                                                                                                    alt="">
+                                                                                            </div>
+                                                                                            <div class="col-md-10 ">
+                                                                                                <div class="d-flex justify-content-between">
+                                                                                                <p class="h-blue">@item.Name_Transport</p>
+                                                                                                   <div class=""style="display:flex;flex-direction:column;gap:0.3cm;">
+                                                                                                                        <span>@item.Classe</span>
+                                                                                                                        <span>@item.Category</span>
+                                                                                                                       
+                                                                                                  
+                                                                                                </div>
+                                                                                                <p class="textmuted">@item.Ville_depart</p>
+                                                                                               <p class="textmuted">@item.Ville_Arrivee</p>
+                                                                                             <div class="d-flex justify-content-end">
+                                                                                                            <i class="fa-solid fa-plus plus_1" ></i>
+                                                                                                        </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    
+                                                                                </div>
+                                                                              </div>
+                                                                                    </div>                                                                      
+                                                                         }
+                                                                        </div>
+                                                                        <div class="tab-pane fade show active"
+                                                                            id="v-pills-messages" role="tabpanel"
+                                                                            aria-labelledby="v-pills-messages-tab">
+                                                                            @foreach (var item in guides)
+                                                                         {   
+                                                                            <div class="container_P">
+
+                                                                                <div class="bg-blue"></div>
+                                                                                <div class="row">
+                                                                                    <div class="col-12 border-bottom px-4 py-2">
+                                                                                        <div class="row p-0">
+                                                                                            <div class=" col-md-2 d-flex justify-content-center">
+                                                                                                <img class="pic mb-md-0 mb-3"
+                                                                                                    src="https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                                                                                                    alt="">
+                                                                                            </div>
+                                                                                            <div class="col-md-10 ">
+                                                                                                <div class="d-flex justify-content-between">
+                                                                                                <p class="h-blue">@item.Name_Guide</p>
+                                                                                                                                        <span>City_Guide</span>
+
+                                                                                                            
+                                                                                                  
+                                                                                                </div>
+                                                                                                    <p class="textmuted">@item.Phone_Guide</p>
+                                                                                                         <p class="textmuted">@item.Email</p>
+                                                                                             <div class="d-flex justify-content-end">
+                                                                                                            <i class="fa-solid fa-plus plus_1" ></i>
+                                                                                                        </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    
+                                                                                </div>
+                                                                              </div>                                                                      
+                                                                         }
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- end col -->
+                                                            </div><!-- end row -->
+                                                        </div>
+                                                    </div><!-- /.modal-content -->
+                                                </div><!-- /.modal-dialog -->
+                                            </div><!-- /.modal -->
+                                        </div><!-- end card body -->
+                                    
+                                </div>
+                            </div>
                         </div>
+
                     </div><!-- end row -->
 
 
-                    <button class="btn btn-primary" type="submit">Submit form</button>
-                </form><!-- end form -->
+
+                    <!-- end form -->
+                </form>
             </div><!-- end card body -->
         </div><!-- end card -->
     </div> <!-- end col -->

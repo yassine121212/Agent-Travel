@@ -19,7 +19,6 @@ public class HotelPartenairsModel
     [DataType(DataType.ImageUrl)]
     public string Picture_Hotel { get; set; }
     [Required]
-    [DataType(DataType.Text)]
     public string Description { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;

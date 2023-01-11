@@ -21,6 +21,52 @@ public class AdminController : Controller
 
     public IActionResult Index()
     {
+<<<<<<< HEAD
+        var currentYear = DateTime.Now.Year;
+        var currentDay = DateTime.Now.Day;
+
+        var commands = _db.Commandes.Include(s => s.id_offre).Where(c => c.id_offre.CreatedAt.Year == currentYear).ToList();
+        var offres_Ann = _db.Offres.Where(c => c.CreatedAt.Year == currentYear).ToList();
+
+        //Les commandes de jour actuel
+        var commands_Day = _db.Commandes.Include(s => s.id_offre).Where(c => c.id_offre.CreatedAt.Day == currentDay && c.id_offre.CreatedAt.Year == currentYear).ToList();
+        //Prévisions de ventes 
+        var commands_Price_Sum = _db.Commandes.Include(s => s.id_offre)
+        .Where(c => c.id_offre.CreatedAt.Year == currentYear).Sum(w => w.Total_Price);
+        var commands_Price_Avg = _db.Commandes.Include(s => s.id_offre)
+        .Where(c => c.id_offre.CreatedAt.Year == currentYear).Average(w => w.Total_Price);
+        //Lead Conversion Rate
+        var numberOfOffres = _db.Offres.Count();
+        var commandes_offres = _db.Commandes.Include(s => s.id_offre).Count();
+        var sum_maxPlaces_offres = _db.Offres.Sum(c => c.max_places);
+        var OccupiedPlaces = commandes_offres / sum_maxPlaces_offres * 100;
+
+        //Prévisions de ventes
+        @ViewBag.forecast = Math.Round(commands_Price_Avg / commands_Price_Sum * 100, 2);
+        //Lead Conversion Rate
+        @ViewBag.CR = OccupiedPlaces;
+        //
+        @ViewBag.offf = _db.Offres.ToArray();
+        Console.WriteLine("eeeeeeeeeeeeee");
+        Console.WriteLine(@ViewBag.offf);
+        @ViewBag.chiff_offres_Day = commands_Day.Sum(c => c.Total_Price);
+        @ViewBag.chiff_offres = offres_Ann.Sum(c => c.Price_Offre);
+        @ViewBag.profit = commands.Sum(c => c.Total_Price);
+        @ViewBag.nb_offres = _db.Offres.Count();
+        // var jsonData = JsonConvert.SerializeObject(commands_Price);
+        // Console.WriteLine(jsonData);
+        // var author_names = new[] { jsonData };
+
+        // foreach (var item in author_names)
+        // {
+        //     Console.WriteLine(item);
+        // }
+        // var salesData = new[] { 100, 200, 150, 300, 250, 400, 350, 500, 450, 600, 550, 650 };
+        // var periods = 12;
+        // var forecast = salesData.TakeLast(periods).Average();
+        // Console.WriteLine("forecast: " + forecast);
+=======
+>>>>>>> main
         return View();
     }
      public IActionResult Display_Offres(int? id)
@@ -36,17 +82,38 @@ public class AdminController : Controller
 
         return View(objOffresList);
     }
+<<<<<<< HEAD
+    public IActionResult Add_Offre()
+    {
+        var hotels = _db.HotelPartenairs.ToList();
+        var transports = _db.TransportPartenairs.ToList();
+        var guides = _db.GuidePartenairs.ToList();
+
+        ViewBag.guides = guides;
+        ViewBag.Hotels = hotels;
+        ViewBag.Transports = transports;
+
+=======
     public IActionResult Add_Offre(){
+>>>>>>> main
         return View();
     }
     [HttpPost]
     [ValidateAntiForgeryToken]
      public IActionResult Add_Offre(OffreModel obj)
     {
+<<<<<<< HEAD
+
+        _db.Offres.Add(obj);
+        _db.SaveChanges();
+        return RedirectToAction("Display_Offres");
+
+=======
          _db.Offres.Add(obj);
             _db.SaveChanges();
             return RedirectToAction("Display_Offres");
        
+>>>>>>> main
     }
      public IActionResult Edit_Offre(int? id)
     {
