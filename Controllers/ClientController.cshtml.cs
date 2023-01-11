@@ -36,7 +36,7 @@ public class ClientController : Controller
     }
     
     [HttpGet]
-    public ActionResult Search(int ? isinter,int? id,int Minprice, string villedest,string villedp,int Adult,int Enfant,int Maxprice, string Dest, string Depart, int Hotel, int page = 1, int pageSize = 2)
+    public ActionResult Search(int? id,int Minprice, string villedest,string villedp,int Adult,int Enfant,int Maxprice, string Dest, string Depart, int Hotel, int page = 1, int pageSize = 2)
     {  if (!string.IsNullOrEmpty(villedest)){
         HttpContext.Session.SetString("ville",villedest);}
         if(!string.IsNullOrEmpty(villedp)){
@@ -45,9 +45,9 @@ public class ClientController : Controller
             HttpContext.Session.SetInt32("nbAdult",Adult);}
               if(Enfant!=0 ){
             HttpContext.Session.SetInt32("nbEnf",Enfant);}
-               if(id!=null){
+               if(id!=null&& id!=0){
             HttpContext.Session.SetInt32("idofrre", (int)id);}
-                if(isinter!=null){
+                if(id==0){
             HttpContext.Session.SetString("intern","Maroc");}
             
         
@@ -74,7 +74,7 @@ if ( HttpContext.Session.GetInt32("idofrre")!=null)
     
 }
 if (!string.IsNullOrEmpty(HttpContext.Session.GetString("intern")))
-{query = query.Where(d => d.Pays.Contains(HttpContext.Session.GetString("intern")));
+{query = query.Where(d => d.Pays!=HttpContext.Session.GetString("intern"));
     
 }
         if (Minprice != 0)
