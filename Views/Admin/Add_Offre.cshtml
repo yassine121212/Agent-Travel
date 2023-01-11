@@ -12,7 +12,7 @@
             <div class="card-body">
                 <form class="needs-validation" method="post" novalidate>
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="mb-3">
                                 <label class="form-label" for="validationCustom01">Titre de l'offre</label>
                                 <input type="text" class="form-control" id="validationCustom01" name="Title_Offre"
@@ -59,6 +59,17 @@
                                 </div>
                             </div>
                         </div><!-- end col -->
+                        <div class="col-md-1">
+                            <div class="mb-3 position-relative">
+                                <label class="form-label" for="validationTooltipUsername">Places</label>
+                                <div class="input-group">
+
+                                    <input type="number" class="form-control" name="Price_Offre"
+                                        id="validationTooltipUsername" placeholder="num"
+                                        aria-describedby="validationTooltipUsernamePrepend" required>
+                                </div>
+                            </div>
+                        </div><!-- end col -->
 
                     </div><!-- end row -->
                     <div class="row">
@@ -86,6 +97,47 @@
                             <label for="exampleFormControlTextarea1">Description</label>
                             <textarea class="form-control" name="Description_Offre" id="exampleFormControlTextarea1"
                                 rows="3"></textarea>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-primary " data-bs-toggle="modal"
+                                data-bs-target=".bs-example-modal-center">Center modal</button>
+
+                                <div class="card-body">
+                                    <!-- center modal -->
+                                    <button type="button" class="btn btn-primary " data-bs-toggle="modal"
+                                        data-bs-target=".bs-example-modal-center">Center modal</button>
+
+                                    <div class="modal fade bs-example-modal-center" tabindex="-1" role="dialog"
+                                        aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Center modal</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close">
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>Cras mattis consectetur purus sit amet fermentum.
+                                                        Cras justo odio, dapibus ac facilisis in,
+                                                        egestas eget quam. Morbi leo risus, porta ac
+                                                        consectetur ac, vestibulum at eros.</p>
+                                                    <p>Praesent commodo cursus magna, vel scelerisque
+                                                        nisl consectetur et. Vivamus sagittis lacus vel
+                                                        augue laoreet rutrum faucibus dolor auctor.</p>
+                                                    <p class="mb-0">Aenean lacinia bibendum nulla sed consectetur.
+                                                        Praesent commodo cursus magna, vel scelerisque
+                                                        nisl consectetur et. Donec sed odio dui. Donec
+                                                        ullamcorper nulla non metus auctor
+                                                        fringilla.</p>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                </div><!-- end card body -->
+                            </div><!-- end card -->
+                        </div><!-- end col -->
+
                         </div>
                     </div><!-- end row -->
 

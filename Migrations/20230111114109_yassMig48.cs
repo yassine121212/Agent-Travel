@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace dotn.Migrations
 {
     /// <inheritdoc />
-    public partial class yassMig44 : Migration
+    public partial class yassMig48 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -106,6 +106,7 @@ namespace dotn.Migrations
                     Review = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     City = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: true),
                     VilleArrivee = table.Column<string>(name: "Ville_Arrivee", type: "nvarchar(25)", maxLength: 25, nullable: true),
+                    maxplaces = table.Column<int>(name: "max_places", type: "int", nullable: true),
                     Pays = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DateEnd = table.Column<DateTime>(name: "Date_End", type: "datetime2", nullable: false),
                     DateBegin = table.Column<DateTime>(name: "Date_Begin", type: "datetime2", nullable: false),

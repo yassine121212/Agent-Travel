@@ -26,6 +26,9 @@ public class OffreModel
     public string? City { get; set; }
     [MaxLength(25)]
     public string? Ville_Arrivee { get; set; }
+
+    public int? max_places { get; set; }
+
     [Required]
     [DataType(DataType.Text)]
     public string Pays { get; set; }
