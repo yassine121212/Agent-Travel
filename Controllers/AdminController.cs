@@ -40,12 +40,15 @@ public class AdminController : Controller
         var commandes_offres = _db.Commandes.Include(s => s.id_offre).Count();
         var sum_maxPlaces_offres = _db.Offres.Sum(c => c.max_places);
         var OccupiedPlaces = commandes_offres / sum_maxPlaces_offres * 100;
-      
+
         //Prévisions de ventes
         @ViewBag.forecast = Math.Round(commands_Price_Avg / commands_Price_Sum * 100, 2);
         //Lead Conversion Rate
-        @ViewBag.CR=OccupiedPlaces;
+        @ViewBag.CR = OccupiedPlaces;
         //
+        @ViewBag.offf = _db.Offres.ToArray();
+        Console.WriteLine("eeeeeeeeeeeeee");
+        Console.WriteLine(@ViewBag.offf);
         @ViewBag.chiff_offres_Day = commands_Day.Sum(c => c.Total_Price);
         @ViewBag.chiff_offres = offres_Ann.Sum(c => c.Price_Offre);
         @ViewBag.profit = commands.Sum(c => c.Total_Price);
@@ -79,12 +82,21 @@ public class AdminController : Controller
     }
     public IActionResult Add_Offre()
     {
+        var hotels = _db.HotelPartenairs.ToList();
+        var transports = _db.TransportPartenairs.ToList();
+        var guides = _db.GuidePartenairs.ToList();
+
+        ViewBag.guides = guides;
+        ViewBag.Hotels = hotels;
+        ViewBag.Transports = transports;
+
         return View();
     }
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Add_Offre(OffreModel obj)
     {
+
         _db.Offres.Add(obj);
         _db.SaveChanges();
         return RedirectToAction("Display_Offres");
