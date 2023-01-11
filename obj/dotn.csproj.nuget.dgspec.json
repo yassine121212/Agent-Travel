@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\github\\Agent-Travel\\dotn.csproj": {}
+    "C:\\Users\\Asus\\Desktop\\Agent\\Agent-Travel\\dotn.csproj": {}
   },
   "projects": {
-    "D:\\github\\Agent-Travel\\dotn.csproj": {
+    "C:\\Users\\Asus\\Desktop\\Agent\\Agent-Travel\\dotn.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\github\\Agent-Travel\\dotn.csproj",
+        "projectUniqueName": "C:\\Users\\Asus\\Desktop\\Agent\\Agent-Travel\\dotn.csproj",
         "projectName": "dotn",
-        "projectPath": "D:\\github\\Agent-Travel\\dotn.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\github\\Agent-Travel\\obj\\",
+        "projectPath": "C:\\Users\\Asus\\Desktop\\Agent\\Agent-Travel\\dotn.csproj",
+        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Asus\\Desktop\\Agent\\Agent-Travel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -98,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }

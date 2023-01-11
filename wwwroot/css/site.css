@@ -135,3 +135,11 @@ width: 100%;}
      background-color: #efe9f2 !important;
      backdrop-filter: saturate(200%) blur(25px);
    }
+ #itemCounter{
+font-size: 1rem;
+background-color:#4A3060;
+border-radius: 25px;
+top:1rem;
+position: absolute;
+  right: 10rem;
+   }
