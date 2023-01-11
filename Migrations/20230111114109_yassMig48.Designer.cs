@@ -12,8 +12,8 @@ using dotn.Data;
 namespace dotn.Migrations
 {
     [DbContext(typeof(AplicationDbContext))]
-    [Migration("20230110173445_yassMig44")]
-    partial class yassMig44
+    [Migration("20230111114109_yassMig48")]
+    partial class yassMig48
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -192,6 +192,9 @@ namespace dotn.Migrations
                     b.Property<string>("Ville_Arrivee")
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
+
+                    b.Property<int?>("max_places")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
