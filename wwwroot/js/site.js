@@ -22,3 +22,55 @@ document.addEventListener(
   },
   false
 );
+function removeFromCart(itemId) {
+  const item = document.getElementById(`item-${itemId}`);
+  item.parentNode.removeChild(item);
+}
+function incrementQuantity(productId) {
+  // Récupérer l'élément de panier correspondant au produit
+  var cartItem = document.getElementById(productId);
+
+  // Récupérer la quantité actuelle
+  var currentQuantity = parseInt(cartItem.getAttribute("data-quantity"));
+
+  // Incrémenter la quantité
+  currentQuantity += 1;
+
+  // Mettre à jour la quantité dans le panier
+  cartItem.setAttribute("data-quantity", currentQuantity);
+
+  // Mettre à jour l'affichage de la quantité pour l'utilisateur
+  var quantityDisplay = cartItem.querySelector(".quantity-display");
+  quantityDisplay.textContent = currentQuantity;
+
+  const unitPriceElement = document.getElementById("unit-price");
+  const totalPriceElement = document.getElementById("total-price");
+  const unitPrice = +unitPriceElement.textContent;
+  const totalPrice = currentQuantity * unitPrice;
+  totalPriceElement.textContent = totalPrice + "$";
+}
+function decrementQuantity(productId) {
+  // Récupérer l'élément de panier correspondant au produit
+  var cartItem = document.getElementById(productId);
+
+  // Récupérer la quantité actuelle
+  var currentQuantity = parseInt(cartItem.getAttribute("data-quantity"));
+
+  // s'assurer qu'on ne décrémente pas si la quantité est déjà 0
+  if (currentQuantity > 1) {
+    // Décrémenter la quantité
+    currentQuantity -= 1;
+
+    // Mettre à jour la quantité dans le panier
+    cartItem.setAttribute("data-quantity", currentQuantity);
+
+    // Mettre à jour l'affichage de la quantité pour l'utilisateur
+    var quantityDisplay = cartItem.querySelector(".quantity-display");
+    quantityDisplay.textContent = currentQuantity;
+  }
+  const unitPriceElement = document.getElementById("unit-price");
+  const totalPriceElement = document.getElementById("total-price");
+  const unitPrice = +unitPriceElement.textContent;
+  const totalPrice = currentQuantity * unitPrice;
+  totalPriceElement.textContent = totalPrice + "$";
+}

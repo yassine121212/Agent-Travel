@@ -67,21 +67,21 @@
           @if (Context.Session.GetInt32("id") != null)
           {
             <ul class="navbar-nav navbar-right  ">
-          
-              
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                    <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg"
-                    width="30" height="30" class="rounded-circle">
-                  </a>
-                  <ul class="dropdown-menu ">
-                    <a class="dropdown-item" asp-controller="Client" asp-action="Profile"> Settings</a>
-                    <a href="@Url.Action("Logout","Client")" class="dropdown-item">Logout</a>
-                  </ul>
-                </li>
-           
-</ul>
+
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                  <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg"
+                  width="30" height="30" class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu ">
+                  <a class="dropdown-item" asp-controller="Client" asp-action="Profile"> Settings</a>
+                  <a href="@Url.Action("Logout","Client")" class="dropdown-item">Logout</a>
+                </ul>
+              </li>
+
+            </ul>
 
             @* <p>Email: @Context.Session.GetString("Email").ToString()</p> *@
 
@@ -102,17 +102,65 @@
     <main role="main">
       @RenderBody()
       <div class="bg-light offcanvas offcanvas-end shadow" tabindex="-1" id="offcanvasNavbar"
-        aria-labelledby="offcanvasNavbarLabel">
+        aria-labelledby="offcanvasNavbarLabel" style="min-width:19cm" ;>
 
         <div class="offcanvas-body">
-
-
+          <section class="h-100" style="background-color: #eee;">
+            <div class="container h-100">
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3 class="fw-normal mb-0 text-black">Shopping Cart</h3>
+              </div>
+              <ul id="cart" style="list-style: none;">
+                <li id="item-1">
+                  <div class="card rounded-3 mb-4">
+                    <div class="card-body p-4">
+                      <div class="row d-flex justify-content-between align-items-center">
+                        <div class="col-md-2 col-lg-2 col-xl-2">
+                          <img
+                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
+                            class="img-fluid rounded-3" alt="Cotton T-shirt">
+                        </div>
+                        <div class="col">
+                          <p>Basic T-shirt</p>
+                        </div>
+                        <div class="col">
+                          <div class="product-quantity ">
+                            <div id="product-1" class="cart-item " data-quantity="1">
+                              <button class="btn btn-default hidden shadow-none"
+                                onclick="incrementQuantity('product-1')"><i class="fas fa-plus"></i></button>
+                              <span class="quantity-display border">1</span>
+                              <button class="btn btn-default hidden shadow-none"
+                                onclick="decrementQuantity('product-1')"><i class="fas fa-minus"></i></button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <p> <span id="unit-price">10</span> $</p>
+                        </div>
+                        <div class="col ">
+                          <button class="btn btn-default hidden text-danger" onclick="removeFromCart(1)">
+                            <i class="fas fa-trash fa-lg"></i></buuton>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </ul>
+              </li>
+              <hr class="mb-4" style="height: 2px; opacity: 1;">
+              <div class="d-flex justify-content-between p-2 mb-2">
+                <h5 class="fw-bold mb-0">Total:</h5>
+                <h5 class="fw-bold mb-0" id="total-price"> $</h5>
+              </div>
+            </div>
 
         </div>
-
-
       </div>
-    </main>
+      </section>
+  </div>
+
+  </div>
+
+  </main>
   </div>
 
   <script src="~/lib/jquery/dist/jquery.min.js"></script>
