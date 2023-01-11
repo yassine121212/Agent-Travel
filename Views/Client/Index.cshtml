@@ -1,4 +1,10 @@
-﻿<div class=" p-5 container-fluid  text-center shadow-lg text-white" style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp');
+﻿@model IEnumerable<OffreModel>
+@{
+    Context.Session.SetInt32("nbAdult",0);
+    Context.Session.SetInt32("nbEnf",0);
+    }
+
+<div class=" p-5 container-fluid  text-center shadow-lg text-white" style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp');
     height: 70vh;">
     <h1 class="mb-3 h2 pt-5"> <i>Planifiez votre voyage avec le meilleur conseiller Touristique</h1>
     </i>
@@ -14,7 +20,7 @@ z-index: 2; margin-top: -50px;">
         <div class="row ">
             <div class="col-2 mb-3 mb-lg-0">
                 <input type="text" class="form-control " placeholder="Ville départ" list="list-timezone"
-                    class="villedp">
+                   name="villedp">
                 <datalist id="list-timezone">
                     <option>Asia/Aden</option>
                     <option>Asia/Aqtau</option>
@@ -55,7 +61,7 @@ z-index: 2; margin-top: -50px;">
 
             <div class="col-lg mb-3 mb-lg-0">
                 <select name="Adult" class="form-select col-t">
-                    <option selected>Adultes</option>
+                    <option selected value="0">Adultes</option>
                     <option  value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -66,7 +72,7 @@ z-index: 2; margin-top: -50px;">
             </div>
             <div class="col-lg mb-3 mb-lg-0">
                 <select name="Enfant" class="form-select">
-                    <option selected>Enfants</option>
+                    <option selected value="0">Enfants</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -92,65 +98,22 @@ z-index: 2; margin-top: -50px;">
         <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
-                    <div class="col-md-4">
+                   
+                </div>
+                @foreach (var item in Model)
+                {
+                <div class="carousel-item ">
+                    <div class="col-md-4"> <a asp-action="Search"  asp-route-id="@item.Id" asp-controller="Client">
                         <div class="card m-2">
+                           
                             <div class="card-img"> <img
-                                    src="https://media.istockphoto.com/id/1185953092/fr/photo/lattraction-principale-de-paris-et-de-toute-leurope-est-la-tour-eiffel-dans-les-rayons-du.jpg?s=612x612&w=0&k=20&c=O-dVJJlzHNws6pU97Lh3-Z1yU0e6_ID877rEMR1SiJE="
+                                    src="@item.Picture_Offre"
                                     class="img-fluid"> </div>
-                            <div class="card-img-overlay">Slide 3</div>
-                        </div>
+                            <div class="card-img-overlay" style="color: black;">@item.Ville_Arrivee</div>
+                        </div></a>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card m-2">
-                            <div class="card-img"> <img
-                                    src="https://media.istockphoto.com/id/1185953092/fr/photo/lattraction-principale-de-paris-et-de-toute-leurope-est-la-tour-eiffel-dans-les-rayons-du.jpg?s=612x612&w=0&k=20&c=O-dVJJlzHNws6pU97Lh3-Z1yU0e6_ID877rEMR1SiJE="
-                                    class="img-fluid"> </div>
-                            <div class="card-img-overlay">Slide 3</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card m-2">
-                            <div class="card-img"> <img
-                                    src="https://media.istockphoto.com/id/1185953092/fr/photo/lattraction-principale-de-paris-et-de-toute-leurope-est-la-tour-eiffel-dans-les-rayons-du.jpg?s=612x612&w=0&k=20&c=O-dVJJlzHNws6pU97Lh3-Z1yU0e6_ID877rEMR1SiJE="
-                                    class="img-fluid"> </div>
-                            <div class="card-img-overlay">Slide 3</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card m-2">
-                            <div class="card-img"> <img
-                                    src="https://media.istockphoto.com/id/1185953092/fr/photo/lattraction-principale-de-paris-et-de-toute-leurope-est-la-tour-eiffel-dans-les-rayons-du.jpg?s=612x612&w=0&k=20&c=O-dVJJlzHNws6pU97Lh3-Z1yU0e6_ID877rEMR1SiJE="
-                                    class="img-fluid"> </div>
-                            <div class="card-img-overlay">Slide 3</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card m-2">
-                            <div class="card-img"> <img
-                                    src="https://media.istockphoto.com/id/1185953092/fr/photo/lattraction-principale-de-paris-et-de-toute-leurope-est-la-tour-eiffel-dans-les-rayons-du.jpg?s=612x612&w=0&k=20&c=O-dVJJlzHNws6pU97Lh3-Z1yU0e6_ID877rEMR1SiJE="
-                                    class="img-fluid"> </div>
-                            <div class="card-img-overlay">Slide 3</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card m-2">
-                            <div class="card-img"> <img
-                                    src="https://media.istockphoto.com/id/1185953092/fr/photo/lattraction-principale-de-paris-et-de-toute-leurope-est-la-tour-eiffel-dans-les-rayons-du.jpg?s=612x612&w=0&k=20&c=O-dVJJlzHNws6pU97Lh3-Z1yU0e6_ID877rEMR1SiJE="
-                                    class="img-fluid"> </div>
-                            <div class="card-img-overlay">Slide 3</div>
-                        </div>
-                    </div>
-                </div>
+                }
             </div> <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button"
                 data-bs-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> </a> <a
                 class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button"
@@ -162,7 +125,7 @@ z-index: 2; margin-top: -50px;">
 
 
 <div class="m-3 pt-4 ">
-    <a href="">
+    <a asp-route-id=1 asp-action="Search" asp-controller="Client">
         <img src="https://lfen.ma/assets/frontend/images/bar-voyage-desktop2.png" class="rounded img-fluid"></a>
 </div>
 

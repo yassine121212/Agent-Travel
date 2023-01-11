@@ -22,31 +22,59 @@ public class ClientController : Controller
     }
 
     public IActionResult Index()
-    {
-        return View();
+    { HttpContext.Session.Clear();
+  IEnumerable<OffreModel> offredata = _db.Offres;
+        return View(offredata);
     }
     
     public ActionResult Profile()
     {
-        
+         HttpContext.Session.Clear();
+       
         return View();
 
     }
     
     [HttpGet]
-    public ActionResult Search(int Minprice, string villedest,int Maxprice, string Dest, string Depart, int Hotel, int page = 1, int pageSize = 2)
-    {
-        IEnumerable<OffreModel> data = GetData(Minprice, Maxprice,villedest, Hotel, Dest, Depart);
+    public ActionResult Search(int ? isinter,int? id,int Minprice, string villedest,string villedp,int Adult,int Enfant,int Maxprice, string Dest, string Depart, int Hotel, int page = 1, int pageSize = 2)
+    {  if (!string.IsNullOrEmpty(villedest)){
+        HttpContext.Session.SetString("ville",villedest);}
+        if(!string.IsNullOrEmpty(villedp)){
+          HttpContext.Session.SetString("villedep",villedp);}
+          if(Adult!=0 ){
+            HttpContext.Session.SetInt32("nbAdult",Adult);}
+              if(Enfant!=0 ){
+            HttpContext.Session.SetInt32("nbEnf",Enfant);}
+               if(id!=null){
+            HttpContext.Session.SetInt32("idofrre", (int)id);}
+                if(isinter!=null){
+            HttpContext.Session.SetString("intern","Maroc");}
+            
+        
+        
+        IEnumerable<OffreModel> data = GetData(Minprice, Maxprice, Hotel, Dest, Depart);
         PagedList<OffreModel> model = new PagedList<OffreModel>(data, page, pageSize);
         return View(model);
     }
 
-    private List<OffreModel> GetData(int Minprice, int Maxprice,string villedest, int Hotel, string Dest, string Depart)
+    private List<OffreModel> GetData(int Minprice, int Maxprice, int Hotel, string Dest, string Depart)
     {
         //int price = Int32.Parse(prixmin);
         var query = _db.Offres.Include(d => d.id_Hotel).Include(d => d.id_Transport).AsQueryable();
-if (!string.IsNullOrEmpty(villedest))
-{query = query.Where(d => d.Ville_Arrivee.Contains(villedest));
+if (!string.IsNullOrEmpty(HttpContext.Session.GetString("ville")))
+{query = query.Where(d => d.Ville_Arrivee.Contains(HttpContext.Session.GetString("ville")));
+    
+}
+if (!string.IsNullOrEmpty(HttpContext.Session.GetString("villedep")))
+{query = query.Where(d => d.City.Contains(HttpContext.Session.GetString("villedep")));
+    
+}
+if ( HttpContext.Session.GetInt32("idofrre")!=null)
+{query = query.Where(d => d.Id==HttpContext.Session.GetInt32("idofrre"));
+    
+}
+if (!string.IsNullOrEmpty(HttpContext.Session.GetString("intern")))
+{query = query.Where(d => d.Pays.Contains(HttpContext.Session.GetString("intern")));
     
 }
         if (Minprice != 0)

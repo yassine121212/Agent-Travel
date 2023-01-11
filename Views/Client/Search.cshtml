@@ -175,9 +175,30 @@
                                     </div>
                             <div class="align-items-center align-content-center col-md-3  border-start mt-1">
                                 <div class="d-flex flex-row align-items-center">
-                                    <h4 class="mr-1">@item.Price_Offre MAD </h4>
+                                    
+                                    <h4 class="mr-1">@if (@Context.Session.GetInt32("nbAdult")!=0&&@Context.Session.GetInt32("nbEnf")!=0)
+                                    { 
+                                          @(@item.Price_Offre*@Context.Session.GetInt32("nbAdult")+((@item.Price_Offre/2)*@Context.Session.GetInt32("nbEnf")))
+                                    }
+                                    else if(@Context.Session.GetInt32("nbAdult")!=0){
+                                             @(@item.Price_Offre*@Context.Session.GetInt32("nbAdult"))
+                                    }
+                                    else{ @item.Price_Offre}
+                                      MAD </h4>
                                 </div>
-                                    <h6 style="color: #fc4333;">Excursions Gratuites</h6>
+                                @if (@Context.Session.GetInt32("nbAdult")!=0){
+                                            <h6 style="color: #fc4333;">Prix pour @Context.Session.GetInt32("nbAdult") Adultes
+                                                @if (@Context.Session.GetInt32("nbEnf")!=0)
+                                                {<p>et @Context.Session.GetInt32("nbEnf") Enfant/s </p>
+                                
+                                                }  </h6>
+                                        }
+                                    
+                                        else{
+             <h6 style="color: #fc4333;">Prix pour 1 Adulte</h6>
+
+                                        }
+                                
                                 <p style="color:#439eb3"><i
                                         class="fa-sharp fa-solid fa-bag-shopping"></i>&nbsp;Croisière sur le Bosphore
                                     <br /> <i class="fa-solid fa-ship"></i>&nbsp;Virée Shopping
