@@ -22,14 +22,35 @@ public class ClientController : Controller
     }
 
     public IActionResult Index()
-    { HttpContext.Session.Clear();
+    { 
+        HttpContext.Session.Remove("ville");
+      
+          HttpContext.Session.Remove("villedep");
+       
+            HttpContext.Session.Remove("nbAdult");
+         
+            HttpContext.Session.Remove("nbEnf");
+         
+            HttpContext.Session.Remove("idofrre");
+               
+            HttpContext.Session.Remove("intern");
   IEnumerable<OffreModel> offredata = _db.Offres;
         return View(offredata);
     }
     
     public ActionResult Profile()
     {
-         HttpContext.Session.Clear();
+        HttpContext.Session.Remove("ville");
+      
+          HttpContext.Session.Remove("villedep");
+       
+            HttpContext.Session.Remove("nbAdult");
+         
+            HttpContext.Session.Remove("nbEnf");
+         
+            HttpContext.Session.Remove("idofrre");
+               
+            HttpContext.Session.Remove("intern");
        
         return View();
 
@@ -129,6 +150,11 @@ if (!string.IsNullOrEmpty(HttpContext.Session.GetString("intern")))
             {
                 HttpContext.Session.SetString("Email", data.FirstOrDefault().Email);
                 HttpContext.Session.SetInt32("id", data.FirstOrDefault().Id);
+                   var dataimage=_db.Users.Where(s => s.Id== HttpContext.Session.GetInt32("id")).Select(s => new { s.Picture_User });
+      foreach (var item in dataimage)
+      {
+         HttpContext.Session.SetString("ImageUrl",item.Picture_User);
+      }
                 return RedirectToAction("Index");
             }
             else
@@ -154,6 +180,7 @@ if (!string.IsNullOrEmpty(HttpContext.Session.GetString("intern")))
             if (check == null)
             {
                 _user.Password = GetMD5(_user.Password);
+                  _user.Picture_User=@"\images\avatar.jpg";
                 _db.Users.Add(_user);
                 _db.SaveChanges();
                 return RedirectToAction("Login");

@@ -25,13 +25,22 @@ namespace dotn.Migrations
             modelBuilder.Entity("dotn.Models.CommandeModel", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("IdOffre")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdUser")
+                        .HasColumnType("int");
 
                     b.Property<double>("Total_Price")
                         .HasColumnType("float");
@@ -40,6 +49,10 @@ namespace dotn.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("IdOffre");
+
+                    b.HasIndex("IdUser");
 
                     b.ToTable("Commandes");
                 });
@@ -177,6 +190,9 @@ namespace dotn.Migrations
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
+                    b.Property<int?>("max_places")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("IdGuide");
@@ -299,13 +315,13 @@ namespace dotn.Migrations
                 {
                     b.HasOne("dotn.Models.OffreModel", "id_offre")
                         .WithMany()
-                        .HasForeignKey("Id")
+                        .HasForeignKey("IdOffre")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("dotn.Models.UserModel", "id_user")
                         .WithMany()
-                        .HasForeignKey("Id")
+                        .HasForeignKey("IdUser")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

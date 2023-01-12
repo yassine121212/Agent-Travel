@@ -115,15 +115,13 @@
 }
 
 .container_P {
-  margin: 10px auto;
+  margin: 30px 10px auto;
   padding: 0;
   background-color: white;
   max-width: 800px;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 6px 10px 23px -4px rgba(255, 255, 255, 0.75);
-  -webkit-box-shadow: 6px 10px 23px -4px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 6px 10px 23px -4px rgba(213, 213, 213, 0.75);
+  box-shadow: 5px 5px 5px #aaaaaa;
 }
 
 .progress-bar {

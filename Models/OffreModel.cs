@@ -22,6 +22,8 @@ public class OffreModel
     public string Picture_Offre { get; set; }
     [DataType(DataType.Text)]
     public string? Review { get; set; }
+
+    public int? max_places { get; set; }
     [MaxLength(25)]
     public string? City { get; set; }
     [MaxLength(25)]
