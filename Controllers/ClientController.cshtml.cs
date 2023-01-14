@@ -38,7 +38,7 @@ public class ClientController : Controller
         return View(offredata);
     }
     
-    public ActionResult Profile()
+    public IActionResult Profile()
     {
         HttpContext.Session.Remove("ville");
       
@@ -51,9 +51,30 @@ public class ClientController : Controller
             HttpContext.Session.Remove("idofrre");
                
             HttpContext.Session.Remove("intern");
-       
-        return View();
 
+         var UsersInfo = _db.Users.Find(HttpContext.Session.GetInt32("id"));
+         
+        return View(UsersInfo);
+
+    }
+
+     [HttpPost]
+    public IActionResult Profile(UserModel obj, IFormFile formFile)
+    {
+        string fileName = Path.GetFileName(formFile.FileName);
+
+        string uploadfilepath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\images", fileName);
+
+        var filestream = new FileStream(uploadfilepath, FileMode.Create);
+
+        formFile.CopyToAsync(filestream);
+
+        string uploadedDBpath = "images\\" + fileName;
+        obj.Id = (int)HttpContext.Session.GetInt32("id");
+        obj.Picture_User = uploadedDBpath;
+        _db.Users.Update(obj);
+        _db.SaveChanges();
+        return RedirectToAction("Index");
     }
     
     [HttpGet]

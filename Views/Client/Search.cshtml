@@ -4,7 +4,8 @@
 
 
 <div>
-    <div class="container mt-5">
+    <div class="container mt-5">       
+                           
         <div class="row  ">
             <div class="col-4">
                 <div class="container border p-3" style="background-color:#efe9f2">
@@ -76,11 +77,12 @@
                         @foreach (var item in Model)
                         { 
                            <div class="row shadow p-3 mb-3 bg-body rounded">
-                            <div class="col-md-3 mt-1 mb-1"><img
+                                <div class="col-md-3 mt-1 mb-1" id="Picture"><img
                                     class="img-fluid img-responsive rounded product-image h-100"
-                                    src="@item.Picture_Offre"></div>
+                                    src="@item.Picture_Offre" ></div>
                             <div class="col-md-6 mt-1">
-                                <h5>@item.Title_Offre</h5>
+                                    <input id="id_offre" value="@item.Id"  class="invisible"/>
+                                <h5 id="title_offre">@item.Title_Offre</h5>
                                  <div class="mt-1 mb-1 spec-1"><span >&nbsp;<i class="fas fa-hotel"></i></span><span
                                         class="dot"></span><span>&nbsp;@item.id_Hotel.Name_Hotel   </span><span >&nbsp;<i class="fas fa-fighter-jet"></i>&nbsp;@item.id_Transport.Name_Transport</span></div>
                                 <div class="d-flex flex-row">
@@ -175,8 +177,8 @@
                                     </div>
                             <div class="align-items-center align-content-center col-md-3  border-start mt-1">
                                 <div class="d-flex flex-row align-items-center">
-                                    
-                                    <h4 class="mr-1">@if (@Context.Session.GetInt32("nbAdult")!=0&&@Context.Session.GetInt32("nbEnf")!=0)
+                                  
+                                            <h4 class="mr-1"  id="price">@if (@Context.Session.GetInt32("nbAdult") != 0 && @Context.Session.GetInt32("nbEnf") != 0)
                                     { 
                                           @(@item.Price_Offre*@Context.Session.GetInt32("nbAdult")+((@item.Price_Offre/2)*@Context.Session.GetInt32("nbEnf")))
                                     }
@@ -203,7 +205,7 @@
                                         class="fa-sharp fa-solid fa-bag-shopping"></i>&nbsp;Croisière sur le Bosphore
                                     <br /> <i class="fa-solid fa-ship"></i>&nbsp;Virée Shopping
                                 </p>
-                                    <div class="d-flex flex-column mty-0"><button class="btn-sm butt " onclick="addToCart(mi)" type="button">Ajouter
+                                    <div class="d-flex flex-column mty-0"><button class="btn-sm butt " onclick="addToCart()" type="button">Ajouter
                                         au panier</button></div>
                             </div>
                         </div> 

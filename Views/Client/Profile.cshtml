@@ -1,0 +1,215 @@
+@model dotn.Models.UserModel;
+@* <!DOCTYPE html>
+
+    <html>
+
+    <head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit Product</title>
+    </head>
+
+    <body>
+
+    <h3>Product Information</h3>
+    @using (Html.BeginForm("Profile", "Client", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+    {
+    <table>
+    <tr>
+    <td>Name</td>
+    <td>@Html.TextBoxFor(model => model.Adress)</td>
+    </tr>
+    <tr>
+    <td>Price</td>
+    <td>@Html.TextBoxFor(model => model.Email)</td>
+    </tr>
+    <tr>
+    <td>Quantity</td>
+    <td>@Html.TextBoxFor(model => model.LastName_User)</td>
+    </tr>
+    <tr>
+    <td>Status</td>
+    <td>@Html.TextBoxFor(model => model.Name_User)</td>
+    </tr>
+    <tr>
+    <tr>
+    <td>Status</td>
+    <td>@Html.TextBoxFor(model => model.Password)</td>
+    </tr>
+    <tr>
+    <td>Status</td>
+    <td>@Html.TextBoxFor(model => model.Phone)</td>
+    </tr>
+    <tr>
+    <td>
+    <input type="file" name="formFile" />
+    </td>
+    </tr>
+    <td>&nbsp;</td>
+    <td>
+    <input type="submit" value="Save" />
+    </td>
+    </tr>
+    </table>
+    }
+
+    </body>
+
+    </html> *@
+@*
+    @using (Html.BeginForm("Profile", "Client", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+    {
+    <div class="">
+
+    <div class="row">
+    <!-- left column -->
+    <div class="col-md-4">
+    <div class="text-center">
+    <div class="profile-pic-wrapper">
+    <div class="pic-holder">
+    <!-- uploaded pic shown here -->
+    <img id="profilePic" class="pic" src="">
+    <Input class="uploadProfileInput" type="file" name="formFile" id="newProfilePhoto"
+    accept="image/*" style="opacity: 0;" />
+    <label for="newProfilePhoto" class="upload-file-block">
+    <div class="text-center">
+    <div class="mb-2">
+    <i class="fa fa-camera fa-2x"></i>
+    </div>
+    <div class="text-uppercase">
+    Update <br /> Profile Photo
+    </div>
+    </div>
+    </label>
+    </div>
+
+    </div>
+    </div>
+    </div>
+
+    <!-- edit form column -->
+    <div class="col-md-8 personal-info">
+    <h3>Personal info</h3>
+    <div class="form-group">
+    <label class="col-lg-3 control-label">Nom:</label>
+    <div class="col-lg-8">
+    @Html.TextBoxFor(model => model.LastName_User)
+    </div>
+    </div>
+    <div class="form-group">
+    <label class="col-lg-3 control-label">Prenom:</label>
+    <div class="col-lg-8">
+    @Html.TextBoxFor(model => model.Name_User)
+    </div>
+    </div>
+    <div class="form-group">
+    <label class="col-lg-3 control-label">Adresse:</label>
+    <div class="col-lg-8">
+    @Html.TextBoxFor(model => model.Adress)
+    </div>
+    </div>
+    <div class="form-group">
+    <label class="col-lg-3 control-label">Email:</label>
+    <div class="col-lg-8">
+    @Html.TextBoxFor(model => model.Email)
+    </div>
+    </div>
+    <div class="form-group">
+    <label class="col-md-3 control-label">Téléphone:</label>
+    <div class="col-md-8">
+    @Html.TextBoxFor(model => model.Phone)
+    </div>
+    </div>
+    <div class="form-group">
+    <label class="col-md-3 control-label">Téléphone:</label>
+    <div class="col-md-8 pass">
+    @Html.TextBoxFor(model => model.Password)
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <hr>
+    <div class="">
+    <input type="submit" value="Save" />
+    </div>
+    </div>
+    } *@
+<section class="vh-50" style="background-color: #f4f5f7;">
+    <div class="container py-5 h-100">
+        @using (Html.BeginForm("Profile", "Client", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+        {
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-lg-8 mb-4 mb-lg-0">
+                    <div class="card mb-3" style="border-radius: .5rem;">
+                        <div class="row g-0">
+                            <div class="col-md-4 gradient-custom text-center text-white"
+                            style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                                <div class="profile-pic-wrapper">
+                                    <div class="pic-holder">
+                                        <!-- uploaded pic shown here -->
+                                    <img id="profilePic" class="pic" src=@Context.Session.GetString("ImageUrl")>
+                                        <Input class="uploadProfileInput" type="file" name="formFile" id="newProfilePhoto"
+                                        accept="image/*" style="opacity: 0;" />
+                                        <label for="newProfilePhoto" class="upload-file-block">
+                                            <div class="text-center">
+                                                <div class="mb-2">
+                                                    <i class="fa fa-camera fa-2x"></i>
+                                                </div>
+                                                <div class="text-uppercase">
+                                                    Update <br /> Profile Photo
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-4">
+                                    <h6>Information</h6>
+                                    <hr class="mt-0 mb-4">
+                                    <div class="row pt-1">
+                                        <div class="col-6 mb-3">
+                                            <h6>LastName</h6>
+                                            @Html.TextBoxFor(model => model.LastName_User)
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <h6>UserName</h6>
+                                            @Html.TextBoxFor(model => model.Name_User)
+                                        </div>
+                                    </div>
+                                    <div class="row pt-1">
+                                        <div class="col-6 mb-3">
+                                            <h6>Email</h6>
+                                            @Html.TextBoxFor(model => model.Email)
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <h6>Phone</h6>
+                                            @Html.TextBoxFor(model => model.Phone)
+                                        </div>
+
+                                    </div>
+                                    <div class="row pt-1">
+                                        <div class="col-12 mb-3">
+                                            <h6>Addresse</h6>
+                                            @Html.TextBoxFor(model => model.Adress,new{@class = "w-100 h-100"})
+                                        </div>
+                                    </div>
+                                    <div class="row pt-1">
+                                        <div class="col-6 mb-3 pass">
+                                            @Html.TextBoxFor(model => model.Password)
+                                        </div>
+
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <input class="butt" type="submit" value="Save" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
