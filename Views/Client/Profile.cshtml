@@ -147,7 +147,9 @@
                                 <div class="profile-pic-wrapper">
                                     <div class="pic-holder">
                                         <!-- uploaded pic shown here -->
-                                    <img id="profilePic" class="pic" src=@Context.Session.GetString("ImageUrl")>
+                                        @* @Html.Partial(@Model.Picture_User); *@
+                                        <img id="profilePic" class="pic" src="~/@Model.Picture_User">
+
                                         <Input class="uploadProfileInput" type="file" name="formFile" id="newProfilePhoto"
                                         accept="image/*" style="opacity: 0;" />
                                         <label for="newProfilePhoto" class="upload-file-block">

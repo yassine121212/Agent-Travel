@@ -64,7 +64,7 @@
             <i class="fas fa-shopping-cart headerIcon"></i>
           </button>
 
-        
+
           @if (Context.Session.GetInt32("id") != null)
           {
             <ul class="navbar-nav navbar-right  ">
@@ -73,8 +73,7 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                  <img src=@Context.Session.GetString("ImageUrl")
-                  width="30" height="30" class="rounded-circle">
+                  <img src="~/@Context.Session.GetString("ImageUrl")" width="30" height="30" class="rounded-circle">
                 </a>
                 <ul class="dropdown-menu ">
                   <a class="dropdown-item" asp-controller="Client" asp-action="Profile"> Settings</a>

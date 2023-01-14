@@ -22,43 +22,43 @@ public class ClientController : Controller
     }
 
     public IActionResult Index()
-    { 
+    {
         HttpContext.Session.Remove("ville");
-      
-          HttpContext.Session.Remove("villedep");
-       
-            HttpContext.Session.Remove("nbAdult");
-         
-            HttpContext.Session.Remove("nbEnf");
-         
-            HttpContext.Session.Remove("idofrre");
-               
-            HttpContext.Session.Remove("intern");
-  IEnumerable<OffreModel> offredata = _db.Offres;
+
+        HttpContext.Session.Remove("villedep");
+
+        HttpContext.Session.Remove("nbAdult");
+
+        HttpContext.Session.Remove("nbEnf");
+
+        HttpContext.Session.Remove("idofrre");
+
+        HttpContext.Session.Remove("intern");
+        IEnumerable<OffreModel> offredata = _db.Offres;
         return View(offredata);
     }
-    
+
     public IActionResult Profile()
     {
         HttpContext.Session.Remove("ville");
-      
-          HttpContext.Session.Remove("villedep");
-       
-            HttpContext.Session.Remove("nbAdult");
-         
-            HttpContext.Session.Remove("nbEnf");
-         
-            HttpContext.Session.Remove("idofrre");
-               
-            HttpContext.Session.Remove("intern");
 
-         var UsersInfo = _db.Users.Find(HttpContext.Session.GetInt32("id"));
-         
+        HttpContext.Session.Remove("villedep");
+
+        HttpContext.Session.Remove("nbAdult");
+
+        HttpContext.Session.Remove("nbEnf");
+
+        HttpContext.Session.Remove("idofrre");
+
+        HttpContext.Session.Remove("intern");
+
+        var UsersInfo = _db.Users.Find(HttpContext.Session.GetInt32("id"));
+
         return View(UsersInfo);
 
     }
 
-     [HttpPost]
+    [HttpPost]
     public IActionResult Profile(UserModel obj, IFormFile formFile)
     {
         string fileName = Path.GetFileName(formFile.FileName);
@@ -74,26 +74,40 @@ public class ClientController : Controller
         obj.Picture_User = uploadedDBpath;
         _db.Users.Update(obj);
         _db.SaveChanges();
+        HttpContext.Session.SetString("ImageUrl", uploadedDBpath);
         return RedirectToAction("Index");
     }
-    
+
     [HttpGet]
-    public ActionResult Search(int? id,int Minprice, string villedest,string villedp,int Adult,int Enfant,int Maxprice, string Dest, string Depart, int Hotel, int page = 1, int pageSize = 2)
-    {  if (!string.IsNullOrEmpty(villedest)){
-        HttpContext.Session.SetString("ville",villedest);}
-        if(!string.IsNullOrEmpty(villedp)){
-          HttpContext.Session.SetString("villedep",villedp);}
-          if(Adult!=0 ){
-            HttpContext.Session.SetInt32("nbAdult",Adult);}
-              if(Enfant!=0 ){
-            HttpContext.Session.SetInt32("nbEnf",Enfant);}
-               if(id!=null&& id!=0){
-            HttpContext.Session.SetInt32("idofrre", (int)id);}
-                if(id==0){
-            HttpContext.Session.SetString("intern","Maroc");}
-            
-        
-        
+    public ActionResult Search(int? id, int Minprice, string villedest, string villedp, int Adult, int Enfant, int Maxprice, string Dest, string Depart, int Hotel, int page = 1, int pageSize = 2)
+    {
+        if (!string.IsNullOrEmpty(villedest))
+        {
+            HttpContext.Session.SetString("ville", villedest);
+        }
+        if (!string.IsNullOrEmpty(villedp))
+        {
+            HttpContext.Session.SetString("villedep", villedp);
+        }
+        if (Adult != 0)
+        {
+            HttpContext.Session.SetInt32("nbAdult", Adult);
+        }
+        if (Enfant != 0)
+        {
+            HttpContext.Session.SetInt32("nbEnf", Enfant);
+        }
+        if (id != null && id != 0)
+        {
+            HttpContext.Session.SetInt32("idofrre", (int)id);
+        }
+        if (id == 0)
+        {
+            HttpContext.Session.SetString("intern", "Maroc");
+        }
+
+
+
         IEnumerable<OffreModel> data = GetData(Minprice, Maxprice, Hotel, Dest, Depart);
         PagedList<OffreModel> model = new PagedList<OffreModel>(data, page, pageSize);
         return View(model);
@@ -103,22 +117,26 @@ public class ClientController : Controller
     {
         //int price = Int32.Parse(prixmin);
         var query = _db.Offres.Include(d => d.id_Hotel).Include(d => d.id_Transport).AsQueryable();
-if (!string.IsNullOrEmpty(HttpContext.Session.GetString("ville")))
-{query = query.Where(d => d.Ville_Arrivee.Contains(HttpContext.Session.GetString("ville")));
-    
-}
-if (!string.IsNullOrEmpty(HttpContext.Session.GetString("villedep")))
-{query = query.Where(d => d.City.Contains(HttpContext.Session.GetString("villedep")));
-    
-}
-if ( HttpContext.Session.GetInt32("idofrre")!=null)
-{query = query.Where(d => d.Id==HttpContext.Session.GetInt32("idofrre"));
-    
-}
-if (!string.IsNullOrEmpty(HttpContext.Session.GetString("intern")))
-{query = query.Where(d => d.Pays!=HttpContext.Session.GetString("intern"));
-    
-}
+        if (!string.IsNullOrEmpty(HttpContext.Session.GetString("ville")))
+        {
+            query = query.Where(d => d.Ville_Arrivee.Contains(HttpContext.Session.GetString("ville")));
+
+        }
+        if (!string.IsNullOrEmpty(HttpContext.Session.GetString("villedep")))
+        {
+            query = query.Where(d => d.City.Contains(HttpContext.Session.GetString("villedep")));
+
+        }
+        if (HttpContext.Session.GetInt32("idofrre") != null)
+        {
+            query = query.Where(d => d.Id == HttpContext.Session.GetInt32("idofrre"));
+
+        }
+        if (!string.IsNullOrEmpty(HttpContext.Session.GetString("intern")))
+        {
+            query = query.Where(d => d.Pays != HttpContext.Session.GetString("intern"));
+
+        }
         if (Minprice != 0)
         {
             query = query.Where(d => d.Price_Offre >= Minprice);
@@ -147,7 +165,7 @@ if (!string.IsNullOrEmpty(HttpContext.Session.GetString("intern")))
         return query.ToList();
 
     }
-    
+
     public ActionResult Logout()
     {
         HttpContext.Session.Clear();//remove session
@@ -171,11 +189,11 @@ if (!string.IsNullOrEmpty(HttpContext.Session.GetString("intern")))
             {
                 HttpContext.Session.SetString("Email", data.FirstOrDefault().Email);
                 HttpContext.Session.SetInt32("id", data.FirstOrDefault().Id);
-                   var dataimage=_db.Users.Where(s => s.Id== HttpContext.Session.GetInt32("id")).Select(s => new { s.Picture_User });
-      foreach (var item in dataimage)
-      {
-         HttpContext.Session.SetString("ImageUrl",item.Picture_User);
-      }
+                var dataimage = _db.Users.Where(s => s.Id == HttpContext.Session.GetInt32("id")).Select(s => new { s.Picture_User });
+                foreach (var item in dataimage)
+                {
+                    HttpContext.Session.SetString("ImageUrl", item.Picture_User);
+                }
                 return RedirectToAction("Index");
             }
             else
@@ -201,7 +219,7 @@ if (!string.IsNullOrEmpty(HttpContext.Session.GetString("intern")))
             if (check == null)
             {
                 _user.Password = GetMD5(_user.Password);
-                  _user.Picture_User=@"\images\avatar.jpg";
+                _user.Picture_User = @"\images\avatar.jpg";
                 _db.Users.Add(_user);
                 _db.SaveChanges();
                 return RedirectToAction("Login");
