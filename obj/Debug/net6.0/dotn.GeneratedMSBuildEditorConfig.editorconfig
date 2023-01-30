@@ -8,105 +8,105 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = dotn
 build_property.RootNamespace = dotn
-build_property.ProjectDir = D:\github\Agent-Travel\
+build_property.ProjectDir = d:\github\Agent-Travel\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\github\Agent-Travel
+build_property.MSBuildProjectDirectory = d:\github\Agent-Travel
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/github/Agent-Travel/Views/Admin/Add_Offre.cshtml]
+[d:/github/Agent-Travel/Views/Admin/Add_Offre.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkX09mZnJlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/github/Agent-Travel/Views/Admin/Display_Offres.cshtml]
+[d:/github/Agent-Travel/Views/Admin/Display_Offres.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGlzcGxheV9PZmZyZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/github/Agent-Travel/Views/Admin/Display_Partners.cshtml]
+[d:/github/Agent-Travel/Views/Admin/Display_Partners.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGlzcGxheV9QYXJ0bmVycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/github/Agent-Travel/Views/Admin/Edit_Offre.cshtml]
+[d:/github/Agent-Travel/Views/Admin/Edit_Offre.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdF9PZmZyZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/github/Agent-Travel/Views/Admin/GuidePartenaire.cshtml]
+[d:/github/Agent-Travel/Views/Admin/GuidePartenaire.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cR3VpZGVQYXJ0ZW5haXJlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/github/Agent-Travel/Views/Admin/HotelPartenaire.cshtml]
+[d:/github/Agent-Travel/Views/Admin/HotelPartenaire.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSG90ZWxQYXJ0ZW5haXJlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/github/Agent-Travel/Views/Admin/Index.cshtml]
+[d:/github/Agent-Travel/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/github/Agent-Travel/Views/Admin/Login.cshtml]
+[d:/github/Agent-Travel/Views/Admin/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/github/Agent-Travel/Views/Admin/Shared/Error.cshtml]
+[d:/github/Agent-Travel/Views/Admin/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/github/Agent-Travel/Views/Admin/Shared/_ValidationScriptsPartial.cshtml]
+[d:/github/Agent-Travel/Views/Admin/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/github/Agent-Travel/Views/Admin/TransportPartenaire.cshtml]
+[d:/github/Agent-Travel/Views/Admin/TransportPartenaire.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVHJhbnNwb3J0UGFydGVuYWlyZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/github/Agent-Travel/Views/Admin/_ViewImports.cshtml]
+[d:/github/Agent-Travel/Views/Admin/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/github/Agent-Travel/Views/Admin/_ViewStart.cshtml]
+[d:/github/Agent-Travel/Views/Admin/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/github/Agent-Travel/Views/Client/Index.cshtml]
+[d:/github/Agent-Travel/Views/Client/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/github/Agent-Travel/Views/Client/Login.cshtml]
+[d:/github/Agent-Travel/Views/Client/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/github/Agent-Travel/Views/Client/Profile.cshtml]
+[d:/github/Agent-Travel/Views/Client/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XFByb2ZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/github/Agent-Travel/Views/Client/Register.cshtml]
+[d:/github/Agent-Travel/Views/Client/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XFJlZ2lzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/github/Agent-Travel/Views/Client/Search.cshtml]
+[d:/github/Agent-Travel/Views/Client/Search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XFNlYXJjaC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/github/Agent-Travel/Views/Client/Shared/Error.cshtml]
+[d:/github/Agent-Travel/Views/Client/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XFNoYXJlZFxFcnJvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/github/Agent-Travel/Views/Client/Shared/_ValidationScriptsPartial.cshtml]
+[d:/github/Agent-Travel/Views/Client/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XFNoYXJlZFxfVmFsaWRhdGlvblNjcmlwdHNQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/github/Agent-Travel/Views/Client/_ViewImports.cshtml]
+[d:/github/Agent-Travel/Views/Client/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XF9WaWV3SW1wb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/github/Agent-Travel/Views/Client/_ViewStart.cshtml]
+[d:/github/Agent-Travel/Views/Client/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/github/Agent-Travel/Views/Admin/Shared/_Layout.cshtml]
+[d:/github/Agent-Travel/Views/Admin/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-yg2f3nq0xu
 
-[D:/github/Agent-Travel/Views/Client/Shared/_layout.cshtml]
+[d:/github/Agent-Travel/Views/Client/Shared/_layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XFNoYXJlZFxfbGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-om26enle06

@@ -75,7 +75,7 @@ public class ClientController : Controller
         _db.Users.Update(obj);
         _db.SaveChanges();
         HttpContext.Session.SetString("ImageUrl", uploadedDBpath);
-        return RedirectToAction("Index");
+        return  RedirectToAction("Index");
     }
 
     [HttpGet]
@@ -219,7 +219,7 @@ public class ClientController : Controller
             if (check == null)
             {
                 _user.Password = GetMD5(_user.Password);
-                _user.Picture_User = @"\images\avatar.jpg";
+                _user.Picture_User = @"images\avatar.jpg";
                 _db.Users.Add(_user);
                 _db.SaveChanges();
                 return RedirectToAction("Login");
